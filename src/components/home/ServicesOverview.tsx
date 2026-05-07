@@ -57,9 +57,33 @@ const colorClasses: Record<string, string> = {
   pink: "bg-pink-50 text-pink-600 group-hover:bg-pink-600 group-hover:text-white",
 };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: { 
+      type: "spring" as const,  // Add 'as const' here
+      stiffness: 100, 
+      damping: 20 
+    }
+  },
+};
+
 export default function ServicesOverview() {
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader
           subtitle="Our Expertise"
@@ -68,32 +92,54 @@ export default function ServicesOverview() {
           centered
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-transparent"
+              variants={cardVariants}
+              whileHover={{ 
+                y: -10,
+                scale: 1.02,
+                transition: { duration: 0.2 }
+              }}
+              className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-blue-100 overflow-hidden"
             >
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${colorClasses[service.color]}`}>
-                <service.icon className="w-7 h-7" />
+              {/* Animated background gradient on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative z-10">
+                <motion.div 
+                  whileHover={{ rotate: 15, scale: 1.1 }}
+                  className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors duration-500 ${colorClasses[service.color]}`}
+                >
+                  <service.icon className="w-7 h-7" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 font-poppins group-hover:text-blue-600 transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                <Link
+                  href={service.href}
+                  className="inline-flex items-center text-sm font-bold text-blue-600 gap-1 group/link"
+                >
+                  <span className="relative">
+                    Learn More
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover/link:w-full" />
+                  </span>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-2" />
+                </Link>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 font-poppins">{service.title}</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                {service.description}
-              </p>
-              <Link
-                href={service.href}
-                className="inline-flex items-center text-sm font-bold text-blue-600 hover:gap-2 transition-all gap-1"
-              >
-                Learn More <ArrowRight className="w-4 h-4" />
-              </Link>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="mt-16 text-center">
           <Link

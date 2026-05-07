@@ -26,31 +26,41 @@ const testimonials = [
 ];
 
 export default function TestimonialsSlider() {
+  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
+
   return (
     <section className="py-24 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 mb-16">
         <SectionHeader
           subtitle="Success Stories"
           title="What Our Clients Say"
           description="We take pride in delivering exceptional results for businesses across various industries."
           centered
         />
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
+      <div className="flex overflow-hidden group select-none relative">
+        <motion.div
+          animate={{
+            x: ["0%", "-33.33%"],
+          }}
+          transition={{
+            duration: 40,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+          className="flex gap-8 px-4"
+        >
+          {duplicatedTestimonials.map((testimonial, index) => (
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between"
+              className="w-[350px] md:w-[450px] flex-shrink-0 bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between hover:border-blue-200 transition-colors"
             >
               <div className="space-y-6">
                 <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
                   <Quote className="w-6 h-6 text-blue-600 fill-blue-600" />
                 </div>
-                <p className="text-gray-600 italic leading-relaxed">
+                <p className="text-gray-600 italic leading-relaxed text-lg">
                   &quot;{testimonial.content}&quot;
                 </p>
               </div>
@@ -65,9 +75,13 @@ export default function TestimonialsSlider() {
                   <p className="text-sm text-gray-500">{testimonial.role}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
+        
+        {/* Gradient overlays for smooth fading edges */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
       </div>
     </section>
   );

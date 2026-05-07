@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothTransitions from "@/components/layout/SmoothTransitions";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import CustomCursor from "@/components/layout/CustomCursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${poppins.variable} font-sans bg-white text-gray-900 antialiased`}>
+        <CustomCursor />
         <Navbar />
         <main>
           <SmoothTransitions>{children}</SmoothTransitions>

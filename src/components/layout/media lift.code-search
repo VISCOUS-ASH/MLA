@@ -1,0 +1,30 @@
+# Query: media lift
+
+11 results - 8 files
+
+src\app\layout.tsx:
+  21:   title: "Media Lift Advisor | Digital Marketing Agency",
+
+src\app\about\page.tsx:
+  60:         subtitle="About Media Lift Advisor"
+  93:                 Founded with a vision to bridge the gap between brands and their digital potential, Media Lift Advisor has grown from a small consultancy to a full-service digital marketing powerhouse.
+
+src\app\careers\page.tsx:
+  60:                 description="At Media Lift Advisor, we believe in fostering a culture of continuous learning, creativity, and mutual respect."
+
+src\app\testimonials\page.tsx:
+  12:     content: "Working with Media Lift Advisor has been a game-changer for our business. Our organic traffic increased by 200% within just 6 months. Their attention to detail and strategic approach is unmatched.",
+  33:     content: "We were struggling with our digital transformation until we met the team at Media Lift. They streamlined our processes and helped us reach a global audience effectively.",
+
+src\components\home\FeaturesSection.tsx:
+  39:               description="At Media Lift Advisor, we combine creativity with technical expertise to deliver outstanding digital experiences."
+
+src\components\home\TestimonialsSlider.tsx:
+  11:     content: "Working with Media Lift Advisor has been a game-changer for our business. Our organic traffic increased by 200% within just 6 months.",
+
+src\components\layout\Footer.tsx:
+  43:                 MEDIA LIFT<span className="text-blue-500">.</span>
+  98:             © {new Date().getFullYear()} Media Lift Advisor. All rights reserved.
+
+src\components\layout\Navbar.tsx:
+  53:             MEDIA LIFT
