@@ -39,40 +39,40 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm py-3"
-          : "bg-transparent"
-      )}
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-5">
+      <div
+  className={cn(
+    "max-w-[1600px] mx-auto flex items-center justify-between rounded-[32px] border transition-all duration-300 px-6 lg:px-10",
+    scrolled
+      ? "bg-[#081120]/90 border-white/10 backdrop-blur-2xl shadow-2xl py-4"
+      : "bg-[#081120]/55 border-white/15 backdrop-blur-xl py-5"
+  )}
+>
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold font-poppins tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-            MEDIA LIFT
-          </span>
+          <span className="text-[34px] font-extrabold tracking-[-1px] text-white">
+  MEDIA <span className="text-blue-500">LIFT</span>
+</span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center gap-12">
           {navLinks.map((link) => (
             <div key={link.name} className="relative group">
               <Link
                 href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1"
+                className="text-[17px] font-medium text-white/80 hover:text-white transition-all duration-300 flex items-center gap-1"
               >
                 {link.name}
                 {link.submenu && <ChevronDown className="w-4 h-4" />}
               </Link>
               {link.submenu && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                <div className="absolute top-full left-0 mt-5 w-64 bg-[#0f172a]/95 backdrop-blur-2xl rounded-2xl border border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-3 group-hover:translate-y-0">
                   <div className="py-2">
                     {link.submenu.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        className="block px-5 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200"
                       >
                         {item.name}
                       </Link>
@@ -84,7 +84,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="px-6 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg active:scale-95"
+            className="px-8 py-4 bg-blue-600 text-white text-base font-semibold rounded-full hover:bg-blue-500 transition-all duration-300 shadow-[0_10px_30px_rgba(37,99,235,0.45)] hover:scale-[1.03] active:scale-95"
           >
             Get Started
           </Link>
