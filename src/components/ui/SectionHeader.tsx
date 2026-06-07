@@ -31,8 +31,9 @@ export default function SectionHeader({
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-block text-blue-600 font-semibold tracking-wider uppercase text-sm"
+          className="inline-flex items-center gap-2 rounded-full bg-[#FFB800]/12 px-4 py-2 text-[#B98100] font-bold tracking-wider uppercase text-xs"
         >
+          <span className="h-1.5 w-1.5 rounded-full bg-[#FFB800]" />
           {subtitle}
         </motion.span>
       )}
@@ -41,7 +42,10 @@ export default function SectionHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins text-gray-900 leading-tight"
+        className={cn(
+          "text-3xl md:text-4xl lg:text-5xl font-bold font-poppins leading-tight",
+          className?.includes("text-white") ? "text-white" : "text-[#081120]"
+        )}
       >
         {title}
       </motion.h2>
@@ -51,7 +55,10 @@ export default function SectionHeader({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-lg text-gray-600 leading-relaxed"
+          className={cn(
+            "text-lg leading-relaxed",
+            className?.includes("text-white") ? "text-white/65" : "text-gray-600"
+          )}
         >
           {description}
         </motion.p>

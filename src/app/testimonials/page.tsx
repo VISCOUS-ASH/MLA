@@ -1,7 +1,6 @@
 "use client";
 
 import PageHeader from "@/components/ui/PageHeader";
-import SectionHeader from "@/components/ui/SectionHeader";
 import { motion } from "framer-motion";
 import { Quote, Star } from "lucide-react";
 
@@ -69,7 +68,7 @@ export default function TestimonialsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 p-10 rounded-[2.5rem] border border-gray-100 flex flex-col justify-between hover:bg-white hover:shadow-2xl transition-all duration-500 group"
+                className="bg-white p-10 rounded-[2rem] border border-gray-100 flex flex-col justify-between interactive-card group"
               >
                 <div className="space-y-6">
                   <div className="flex items-center gap-1">
@@ -77,8 +76,8 @@ export default function TestimonialsPage() {
                       <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
-                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Quote className="w-6 h-6 text-white fill-white" />
+                  <div className="w-12 h-12 bg-[#FFB800] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Quote className="w-6 h-6 text-[#081120] fill-[#081120]" />
                   </div>
                   <p className="text-gray-600 italic leading-relaxed text-lg">
                     &quot;{testimonial.content}&quot;
@@ -92,7 +91,7 @@ export default function TestimonialsPage() {
                   />
                   <div>
                     <h4 className="font-bold text-gray-900 font-poppins">{testimonial.name}</h4>
-                    <p className="text-sm text-blue-600 font-semibold uppercase tracking-wide">{testimonial.role}</p>
+                    <p className="text-sm text-[#B98100] font-semibold uppercase tracking-wide">{testimonial.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -105,19 +104,19 @@ export default function TestimonialsPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-block p-12 bg-gray-900 rounded-[3rem] text-white"
+              className="inline-block p-12 bg-[#081120] rounded-[3rem] text-white shadow-2xl"
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
                 <div>
-                  <p className="text-5xl font-bold font-poppins text-blue-500 mb-2">98%</p>
+                  <p className="text-5xl font-bold font-poppins text-[#FFB800] mb-2">98%</p>
                   <p className="text-gray-400 font-medium">Client Retention Rate</p>
                 </div>
                 <div>
-                  <p className="text-5xl font-bold font-poppins text-blue-500 mb-2">500+</p>
+                  <p className="text-5xl font-bold font-poppins text-[#FFB800] mb-2">500+</p>
                   <p className="text-gray-400 font-medium">Successful Projects</p>
                 </div>
                 <div>
-                  <p className="text-5xl font-bold font-poppins text-blue-500 mb-2">4.9/5</p>
+                  <p className="text-5xl font-bold font-poppins text-[#FFB800] mb-2">4.9/5</p>
                   <p className="text-gray-400 font-medium">Average Client Rating</p>
                 </div>
               </div>

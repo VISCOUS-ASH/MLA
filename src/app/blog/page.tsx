@@ -81,7 +81,7 @@ export default function BlogPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100"
+                className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-gray-100 interactive-card"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
@@ -90,7 +90,7 @@ export default function BlogPage() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-4 py-1.5 bg-blue-600 text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">
+                    <span className="px-4 py-1.5 bg-[#FFB800] text-[#081120] text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">
                       {post.category}
                     </span>
                   </div>
@@ -99,16 +99,16 @@ export default function BlogPage() {
                 <div className="p-8 flex flex-col flex-grow">
                   <div className="flex items-center gap-6 mb-4 text-xs font-medium text-gray-500 uppercase tracking-widest">
                     <div className="flex items-center gap-2">
-                      <Calendar className="w-3.5 h-3.5 text-blue-500" />
+                      <Calendar className="w-3.5 h-3.5 text-[#FFB800]" />
                       {post.date}
                     </div>
                     <div className="flex items-center gap-2">
-                      <User className="w-3.5 h-3.5 text-blue-500" />
+                      <User className="w-3.5 h-3.5 text-[#FFB800]" />
                       {post.author}
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 font-poppins group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 font-poppins group-hover:text-[#B98100] transition-colors">
                     <Link href={`/blog/${post.slug}`}>
                       {post.title}
                     </Link>
@@ -121,7 +121,7 @@ export default function BlogPage() {
                   <div className="mt-auto">
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="inline-flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-all"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-gray-900 group-hover:text-[#B98100] transition-all"
                     >
                       Read Full Story <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
@@ -132,13 +132,14 @@ export default function BlogPage() {
           </div>
 
           {/* Newsletter Section */}
-          <div className="mt-24 bg-blue-600 rounded-[3rem] p-12 md:p-20 relative overflow-hidden text-center text-white">
+          <div className="mt-24 bg-[#081120] rounded-[3rem] p-12 md:p-20 relative overflow-hidden text-center text-white">
+            <div className="absolute inset-0 soft-grid opacity-15" />
             <div className="relative z-10 max-w-2xl mx-auto space-y-8">
-              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-md">
-                <Tag className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-[#FFB800]/12 border border-[#FFB800]/25 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-md">
+                <Tag className="w-8 h-8 text-[#FFB800]" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold font-poppins">Subscribe for Digital Mastery</h2>
-              <p className="text-blue-100 leading-relaxed text-lg">
+              <p className="text-white/70 leading-relaxed text-lg">
                 Join 5,000+ marketing professionals and business owners. Get our best insights delivered straight to your inbox.
               </p>
               <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto pt-4">
@@ -150,19 +151,15 @@ export default function BlogPage() {
                 />
                 <button
                   type="submit"
-                  className="px-10 py-4 bg-gray-900 text-white font-bold rounded-full hover:bg-gray-800 transition-all shadow-xl active:scale-95"
+                  className="px-10 py-4 gold-button font-bold rounded-full"
                 >
                   Join Now
                 </button>
               </form>
-              <p className="text-xs text-blue-200">
+              <p className="text-xs text-white/45">
                 We respect your privacy. Unsubscribe at any time.
               </p>
             </div>
-            
-            {/* Decoration */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
           </div>
         </div>
       </section>

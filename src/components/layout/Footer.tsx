@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaXTwitter, FaTwitter } from "react-icons/fa6";
+import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa6";
 
 const footerLinks = [
   {
@@ -33,14 +33,15 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer className="bg-[#081120] text-gray-300 pt-20 pb-10 relative overflow-hidden">
+      <div className="absolute inset-0 soft-grid opacity-10" />
+      <div className="max-w-7xl mx-auto px-6 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand and Contact */}
           <div className="lg:col-span-2 space-y-6">
             <Link href="/" className="inline-block">
               <span className="text-2xl font-bold font-poppins tracking-tight text-white">
-                MEDIA LIFT<span className="text-blue-500">.</span>
+                MEDIA <span className="text-[#FFB800]">LIFT</span>
               </span>
             </Link>
             <p className="text-gray-400 max-w-sm">
@@ -48,30 +49,30 @@ export default function Footer() {
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-blue-500" />
+                <Mail className="w-5 h-5 text-[#FFB800]" />
                 <span>hello@medialift.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-blue-500" />
+                <Phone className="w-5 h-5 text-[#FFB800]" />
                 <span>+1 (555) 000-0000</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-blue-500" />
+                <MapPin className="w-5 h-5 text-[#FFB800]" />
                 <span>123 Digital Ave, Tech City, TC 10101</span>
               </div>
             </div>
             <div className="flex space-x-4 pt-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
-                <FaFacebookF className="w-5 h-5 text-white" />
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#FFB800] hover:text-[#081120] transition-colors">
+                <FaFacebookF className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
-                <FaTwitter className="w-5 h-5 text-white" />
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#FFB800] hover:text-[#081120] transition-colors">
+                <FaTwitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
-                <FaInstagram className="w-5 h-5 text-white" />
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#FFB800] hover:text-[#081120] transition-colors">
+                <FaInstagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
-                <FaLinkedinIn className="w-5 h-5 text-white" />
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#FFB800] hover:text-[#081120] transition-colors">
+                <FaLinkedinIn className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -83,8 +84,9 @@ export default function Footer() {
               <ul className="space-y-4">
                 {section.links.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="hover:text-blue-500 transition-colors">
+                    <Link href={link.href} className="group inline-flex items-center gap-1 hover:text-[#FFB800] transition-colors">
                       {link.name}
+                      <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
                     </Link>
                   </li>
                 ))}

@@ -69,8 +69,8 @@ export default function CareersPage() {
                     transition={{ delay: idx * 0.1 }}
                     className="space-y-3"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
-                      <perk.icon className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 rounded-xl bg-[#FFB800]/12 flex items-center justify-center">
+                      <perk.icon className="w-6 h-6 text-[#B98100]" />
                     </div>
                     <h4 className="font-bold text-gray-900 font-poppins">{perk.title}</h4>
                     <p className="text-sm text-gray-500 leading-relaxed">{perk.desc}</p>
@@ -92,7 +92,7 @@ export default function CareersPage() {
                 />
               </div>
               <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 hidden md:block">
-                <Coffee className="w-10 h-10 text-blue-600 mb-4" />
+                <Coffee className="w-10 h-10 text-[#B98100] mb-4" />
                 <p className="font-bold text-gray-900">Great Coffee & <br /> Even Better People.</p>
               </div>
             </motion.div>
@@ -118,22 +118,22 @@ export default function CareersPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white p-8 rounded-3xl border border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                className="bg-white p-8 rounded-3xl border border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-6 interactive-card group"
               >
                 <div className="space-y-4">
-                  <span className="px-4 py-1.5 bg-blue-50 text-blue-600 text-xs font-bold rounded-full uppercase tracking-wider">
+                  <span className="px-4 py-1.5 bg-[#FFB800]/12 text-[#B98100] text-xs font-bold rounded-full uppercase tracking-wider">
                     {job.category}
                   </span>
-                  <h3 className="text-2xl font-bold text-gray-900 font-poppins group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-gray-900 font-poppins group-hover:text-[#B98100] transition-colors">
                     {job.title}
                   </h3>
                   <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 font-medium">
                     <div className="flex items-center gap-2">
-                      <Briefcase className="w-4 h-4 text-blue-500" />
+                      <Briefcase className="w-4 h-4 text-[#FFB800]" />
                       {job.type}
                     </div>
                     <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-blue-500" />
+                      <MapPin className="w-4 h-4 text-[#FFB800]" />
                       {job.location}
                     </div>
                   </div>
@@ -141,7 +141,7 @@ export default function CareersPage() {
                 <div>
                   <Link
                     href="#"
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white font-bold rounded-full hover:bg-blue-600 transition-all shadow-lg active:scale-95"
+                    className="inline-flex items-center gap-2 px-8 py-4 dark-button font-bold rounded-full group-hover:bg-[#FFB800] group-hover:text-[#081120]"
                   >
                     Apply Now <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -152,7 +152,7 @@ export default function CareersPage() {
 
           <div className="mt-16 text-center">
             <p className="text-gray-600">
-              Don&apos;t see a role that fits? <Link href="#" className="text-blue-600 font-bold hover:underline">Send us your CV</Link> for future consideration.
+              Don&apos;t see a role that fits? <Link href="#" className="text-[#B98100] font-bold hover:underline">Send us your CV</Link> for future consideration.
             </p>
           </div>
         </div>

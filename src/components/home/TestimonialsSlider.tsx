@@ -1,131 +1,116 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote, Star } from "lucide-react";
-import SectionHeader from "@/components/ui/SectionHeader";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
     name: "Sarah Johnson",
     role: "CEO at TechFlow",
-    content: "Working with Media Lift Advisor has been a game-changer for our business. Our organic traffic increased by 200% within just 6 months.",
+    content:
+      "Working with Media Lift Advisor has been a game-changer for our business. Our organic traffic increased by 200% within just 6 months.",
     avatar: "https://i.pravatar.cc/150?u=11",
     rating: 5,
   },
   {
     name: "Michael Chen",
     role: "Marketing Director at Innovate",
-    content: "Their team is incredibly professional and data-driven. The ROI we've seen on our paid campaigns is far beyond our expectations.",
+    content:
+      "Their team is incredibly professional and data-driven. The ROI we've seen on our paid campaigns is far beyond our expectations.",
     avatar: "https://i.pravatar.cc/150?u=12",
     rating: 5,
   },
   {
     name: "Emma Williams",
     role: "Founder of StyleCo",
-    content: "The brand strategy they developed for us perfectly captured our essence. We've received so many compliments on our new digital presence.",
+    content:
+      "The brand strategy they developed for us perfectly captured our essence. We've received so many compliments on our new digital presence.",
     avatar: "https://i.pravatar.cc/150?u=13",
+    rating: 5,
+  },
+  {
+    name: "James Rivera",
+    role: "Head of Growth at ScaleUp",
+    content:
+      "From zero to 50k monthly visitors in four months. The SEO and content team really knows what they're doing. Highly recommend.",
+    avatar: "https://i.pravatar.cc/150?u=21",
+    rating: 5,
+  },
+  {
+    name: "Priya Mehta",
+    role: "Co-founder of GreenBite",
+    content:
+      "Our social media following grew by 3x and engagement tripled. They truly understand audiences and know how to create content that converts.",
+    avatar: "https://i.pravatar.cc/150?u=31",
     rating: 5,
   },
 ];
 
+const duplicated = [...testimonials, ...testimonials];
+
 export default function TestimonialsSlider() {
-  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
-
   return (
-    <section className="relative py-24 overflow-hidden">
-      {/* Main Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50/30 to-purple-50/40" />
-      
-      {/* Animated Gradient Orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-300/30 to-cyan-300/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-indigo-300/30 to-purple-300/30 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-pink-200/20 to-rose-200/20 rounded-full blur-3xl animate-pulse delay-700" />
-        <div className="absolute top-1/3 -right-20 w-80 h-80 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl animate-pulse delay-500" />
-        <div className="absolute bottom-1/3 -left-20 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse delay-1300" />
+    <section className="py-24 bg-[#f5f5f7] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 mb-14 text-center">
+        <span className="inline-block text-[#FFB800] font-bold tracking-wider uppercase text-sm mb-3">
+          Success Stories
+        </span>
+        <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">
+          What our clients say
+        </h2>
+        <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
+          We take pride in delivering results for businesses across every industry.
+        </p>
       </div>
 
-      {/* Moving Gradient Lines */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent animate-shimmer" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-400/50 to-transparent animate-shimmer delay-1000" />
-      </div>
-
-      {/* Curved Wave Pattern at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
-        <svg className="w-full h-24 text-blue-200/30" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="currentColor" fillOpacity="0.3"/>
-          <path d="M0,0V15.81c13,21.11,27.64,41.05,47.69,56.24C99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="currentColor" fillOpacity="0.2"/>
-        </svg>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 mb-16">
-        <SectionHeader
-          subtitle="Success Stories"
-          title="What Our Clients Say"
-          description="We take pride in delivering exceptional results for businesses across various industries."
-          centered
-        />
-      </div>
-
-      <div className="relative flex overflow-hidden group select-none">
+      {/* Scrolling row */}
+      <div className="relative flex overflow-hidden select-none group">
         <motion.div
-          animate={{
-            x: ["0%", "-33.33%"],
-          }}
-          transition={{
-            duration: 40,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          className="flex gap-8 px-4"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 45, ease: "linear", repeat: Infinity }}
+          className="flex gap-6 px-4"
         >
-          {duplicatedTestimonials.map((testimonial, index) => (
+          {duplicated.map((t, i) => (
             <div
-              key={index}
-              className="relative w-[350px] md:w-[450px] flex-shrink-0 bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/50 hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 hover:scale-105 flex flex-col justify-between group/card"
+              key={i}
+              className="w-80 md:w-96 shrink-0 bg-white rounded-3xl p-7 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col gap-5"
             >
-              {/* Card Gradient Background on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-transparent to-indigo-50/0 rounded-2xl group-hover/card:from-blue-50/50 group-hover/card:to-indigo-50/50 transition-all duration-500" />
-              
-              <div className="relative z-10 space-y-6">
-                {/* Rating Stars */}
-                <div className="flex gap-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-md">
-                  <Quote className="w-6 h-6 text-white" />
-                </div>
-                
-                <p className="text-gray-700 italic leading-relaxed text-lg">
-                  &quot;{testimonial.content}&quot;
-                </p>
+              {/* Stars */}
+              <div className="flex gap-1">
+                {[...Array(t.rating)].map((_, j) => (
+                  <Star key={j} className="w-4 h-4 fill-[#FFB800] text-[#FFB800]" />
+                ))}
               </div>
-              
-              <div className="relative z-10 mt-8 flex items-center gap-4">
-                <div className="relative">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-blue-400"
-                  />
-                  <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white" />
-                </div>
+
+              {/* Quote icon */}
+              <div className="w-9 h-9 rounded-full bg-[#FFB800]/10 flex items-center justify-center">
+                <Quote className="w-4 h-4 text-[#FFB800]" />
+              </div>
+
+              {/* Content */}
+              <p className="text-gray-600 text-sm leading-relaxed flex-1">
+                &quot;{t.content}&quot;
+              </p>
+
+              {/* Author */}
+              <div className="flex items-center gap-3 pt-2 border-t border-gray-50">
+                <img
+                  src={t.avatar}
+                  alt={t.name}
+                  className="w-10 h-10 rounded-full object-cover border-2 border-[#FFB800]/30"
+                />
                 <div>
-                  <h4 className="font-bold text-gray-900 font-poppins">{testimonial.name}</h4>
-                  <p className="text-sm text-blue-600 font-medium">{testimonial.role}</p>
+                  <p className="text-sm font-bold text-gray-900">{t.name}</p>
+                  <p className="text-xs text-[#FFB800] font-medium">{t.role}</p>
                 </div>
               </div>
             </div>
           ))}
         </motion.div>
-        
-        {/* Enhanced Gradient overlays for smooth fading edges */}
-        <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-blue-50 via-blue-50/50 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-purple-50 via-purple-50/50 to-transparent z-10 pointer-events-none" />
+
+        {/* Fade edges */}
+        <div className="absolute inset-y-0 left-0 w-24 bg-linear-to-r from-[#f5f5f7] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-linear-to-l from-[#f5f5f7] to-transparent z-10 pointer-events-none" />
       </div>
     </section>
   );

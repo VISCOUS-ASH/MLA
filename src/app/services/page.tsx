@@ -58,12 +58,12 @@ const services = [
 ];
 
 const colorVariants: Record<string, string> = {
-  blue: "from-blue-500 to-blue-600",
-  indigo: "from-indigo-500 to-indigo-600",
-  purple: "from-purple-500 to-purple-600",
-  pink: "from-pink-500 to-pink-600",
-  cyan: "from-cyan-500 to-cyan-600",
-  orange: "from-orange-500 to-orange-600",
+  blue: "from-[#FFB800] to-[#F97316]",
+  indigo: "from-[#0F172A] to-[#1F2937]",
+  purple: "from-[#FFB800] to-[#B98100]",
+  pink: "from-[#0EA5E9] to-[#0369A1]",
+  cyan: "from-[#14B8A6] to-[#0F766E]",
+  orange: "from-[#F97316] to-[#C2410C]",
 };
 
 export default function ServicesPage() {
@@ -85,7 +85,7 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-white rounded-[2rem] p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+                className="group bg-white rounded-[2rem] p-8 border border-gray-100 interactive-card"
               >
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${colorVariants[service.color]} flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform`}>
                   <service.icon className="w-8 h-8 text-white" />
@@ -97,14 +97,14 @@ export default function ServicesPage() {
                 <ul className="space-y-3 mb-10">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-sm text-gray-500">
-                      <CheckCircle2 className="w-4 h-4 text-blue-500" />
+                      <CheckCircle2 className="w-4 h-4 text-[#FFB800]" />
                       {feature}
                     </li>
                   ))}
                 </ul>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="flex items-center justify-between px-6 py-4 bg-gray-50 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300"
+                  className="flex items-center justify-between px-6 py-4 bg-gray-50 rounded-xl group-hover:bg-[#FFB800] group-hover:text-[#081120] transition-colors duration-300"
                 >
                   <span className="font-bold">Learn More</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -126,7 +126,7 @@ export default function ServicesPage() {
           />
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-16 relative">
             {/* Connection Line */}
-            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-blue-600/30 -translate-y-1/2 z-0" />
+            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-[#FFB800]/30 -translate-y-1/2 z-0" />
             
             {[
               { step: "01", title: "Discovery", desc: "We learn your business, goals, and target audience." },
@@ -140,9 +140,9 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="relative z-10 bg-gray-800 p-8 rounded-3xl border border-gray-700 hover:border-blue-500 transition-colors group text-center"
+                className="relative z-10 bg-gray-800 p-8 rounded-3xl border border-gray-700 hover:border-[#FFB800] transition-colors group text-center"
               >
-                <div className="text-4xl font-bold text-blue-500 mb-4 font-poppins opacity-50 group-hover:opacity-100 transition-opacity">
+                <div className="text-4xl font-bold text-[#FFB800] mb-4 font-poppins opacity-50 group-hover:opacity-100 transition-opacity">
                   {item.step}
                 </div>
                 <h4 className="text-xl font-bold mb-3 font-poppins">{item.title}</h4>

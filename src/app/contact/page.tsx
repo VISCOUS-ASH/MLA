@@ -51,9 +51,9 @@ export default function ContactPage() {
 
               <div className="space-y-8">
                 {[
-                  { icon: Mail, label: "Email Us", value: "hello@medialift.com", color: "bg-blue-50 text-blue-600" },
-                  { icon: Phone, label: "Call Us", value: "+1 (555) 000-0000", color: "bg-indigo-50 text-indigo-600" },
-                  { icon: MapPin, label: "Visit Us", value: "123 Digital Ave, Tech City, TC 101", color: "bg-purple-50 text-purple-600" },
+                  { icon: Mail, label: "Email Us", value: "hello@medialift.com", color: "bg-[#FFB800]/12 text-[#B98100]" },
+                  { icon: Phone, label: "Call Us", value: "+1 (555) 000-0000", color: "bg-[#081120] text-white" },
+                  { icon: MapPin, label: "Visit Us", value: "123 Digital Ave, Tech City, TC 101", color: "bg-gray-100 text-[#081120]" },
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
@@ -79,7 +79,7 @@ export default function ContactPage() {
                 <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Follow Our Journey</p>
                 <div className="flex gap-4">
                   {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-12 h-12 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white transition-all cursor-pointer flex items-center justify-center text-gray-600">
+                    <div key={i} className="w-12 h-12 rounded-full bg-gray-100 hover:bg-[#FFB800] hover:text-[#081120] transition-all cursor-pointer flex items-center justify-center text-gray-600">
                       <span className="font-bold text-xs">S{i}</span>
                     </div>
                   ))}
@@ -93,7 +93,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 p-8 md:p-12 rounded-[3rem] shadow-sm border border-gray-100"
+                className="bg-gray-50 p-8 md:p-12 rounded-[2rem] shadow-sm border border-gray-100 interactive-card"
               >
                 <form className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -102,7 +102,7 @@ export default function ContactPage() {
                       <input
                         type="text"
                         placeholder="John Doe"
-                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all"
                       />
                     </div>
                     <div className="space-y-2">
@@ -110,13 +110,13 @@ export default function ContactPage() {
                       <input
                         type="email"
                         placeholder="john@example.com"
-                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all"
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700 ml-1">Subject</label>
-                    <select className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all appearance-none">
+                    <select className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all appearance-none">
                       <option>General Inquiry</option>
                       <option>SEO Services</option>
                       <option>Social Media Marketing</option>
@@ -128,12 +128,12 @@ export default function ContactPage() {
                     <textarea
                       rows={5}
                       placeholder="Tell us about your project..."
-                      className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all resize-none"
+                      className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all resize-none"
                     ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-200 active:scale-[0.98] flex items-center justify-center gap-3"
+                    className="w-full py-5 bg-[#FFB800] text-[#081120] font-bold rounded-2xl hover:bg-[#ffca28] transition-all shadow-xl shadow-[#FFB800]/20 active:scale-[0.98] flex items-center justify-center gap-3"
                   >
                     Send Message <Send className="w-5 h-5" />
                   </button>
@@ -158,14 +158,14 @@ export default function ContactPage() {
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm"
+                className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm interactive-card"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                   className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
                 >
                   <span className="text-lg font-bold text-gray-900 font-poppins">{faq.question}</span>
-                  <ChevronDown className={`w-5 h-5 text-blue-600 transition-transform duration-300 ${openFaq === idx ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`w-5 h-5 text-[#B98100] transition-transform duration-300 ${openFaq === idx ? "rotate-180" : ""}`} />
                 </button>
                 <AnimatePresence>
                   {openFaq === idx && (
@@ -187,11 +187,11 @@ export default function ContactPage() {
 
           <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-4 p-6 bg-white rounded-full shadow-sm border border-gray-100">
-              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
-                <MessageSquare className="w-5 h-5 text-blue-600" />
+              <div className="w-10 h-10 rounded-full bg-[#FFB800]/12 flex items-center justify-center">
+                <MessageSquare className="w-5 h-5 text-[#B98100]" />
               </div>
               <p className="text-gray-600 font-medium">
-                Still have questions? <Link href="#" className="text-blue-600 font-bold hover:underline">Chat with us</Link>
+                Still have questions? <Link href="#" className="text-[#B98100] font-bold hover:underline">Chat with us</Link>
               </p>
             </div>
           </div>

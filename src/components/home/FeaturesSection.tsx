@@ -1,108 +1,127 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, ShieldCheck, Zap, TrendingUp } from "lucide-react";
-import SectionHeader from "@/components/ui/SectionHeader";
+import { CheckCircle2, ShieldCheck, Zap, TrendingUp, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
-const features = [
+const blocks = [
   {
-    title: "100% Trusted Agency",
-    description: "We are recognized for our transparency and commitment to client success, ensuring every partnership is built on trust.",
-    icon: ShieldCheck,
+    tag: "Why Choose Us",
+    title: "Add scroll-stopping results without switching tools",
+    description:
+      "Our team handles every piece of your digital marketing — so you never have to juggle multiple agencies or track down reports. One team, one strategy, one point of contact.",
+    highlights: [
+      { icon: ShieldCheck, text: "100% transparent reporting every month" },
+      { icon: Zap, text: "Data-driven decisions, not guesswork" },
+      { icon: TrendingUp, text: "ROI-focused campaigns from day one" },
+      { icon: CheckCircle2, text: "Dedicated account manager for your brand" },
+    ],
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop",
+    imageLeft: false,
+    cta: { label: "Learn about our process", href: "/about" },
   },
   {
-    title: "Data-Driven Strategies",
-    description: "Our decisions are backed by thorough market research and analytics, ensuring high precision in every campaign.",
-    icon: Zap,
-  },
-  {
-    title: "ROI-Focused Campaigns",
-    description: "We don't just focus on likes and clicks; we prioritize measurable business growth and return on investment.",
-    icon: TrendingUp,
-  },
-  {
-    title: "Digital Transformation",
-    description: "We help traditional businesses transition into the digital age with cutting-edge tools and methodologies.",
-    icon: CheckCircle2,
+    tag: "Content Creation",
+    title: "Optimize for each channel — automatically",
+    description:
+      "We craft platform-specific content that performs. From short-form video scripts to long-form SEO articles, every asset is built to engage your exact audience and convert them into customers.",
+    highlights: [
+      { icon: CheckCircle2, text: "Platform-native content formats" },
+      { icon: CheckCircle2, text: "A/B tested copy & creative" },
+      { icon: CheckCircle2, text: "Consistent brand voice across channels" },
+      { icon: CheckCircle2, text: "Rapid turnaround with quality review" },
+    ],
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1400&auto=format&fit=crop",
+    imageLeft: true,
+    cta: { label: "See content samples", href: "/portfolio" },
   },
 ];
 
 export default function FeaturesSection() {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/10">
-      {/* Animated Background Gradients */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-400/20 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-400/10 rounded-full blur-3xl animate-pulse delay-700" />
-      </div>
-
-      {/* Subtle Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <SectionHeader
-              subtitle="Why Choose Us"
-              title="We Drive Results That Matter to Your Business"
-              description="At Media Lift Advisor, we combine creativity with technical expertise to deliver outstanding digital experiences."
-            />
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group relative space-y-4 p-4 rounded-2xl transition-all duration-300 hover:bg-white/50 hover:shadow-lg"
-                >
-                  {/* Icon with gradient background */}
-                  <div className="relative w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <feature.icon className="relative z-10 w-6 h-6 text-white" />
+    <section className="bg-[#f5f5f7] overflow-hidden">
+      {blocks.map((block, index) => {
+        return (
+          <div
+            key={index}
+            className={`py-20 ${index % 2 === 0 ? "bg-[#f5f5f7]" : "bg-white"}`}
+          >
+            <div className="max-w-7xl mx-auto px-6">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6 }}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
+                  block.imageLeft ? "lg:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Text — order swaps on desktop based on imageLeft */}
+                <div className={`space-y-7 ${block.imageLeft ? "lg:order-2" : "lg:order-1"}`}>
+                  <div>
+                    <span className="inline-block text-[#FFB800] font-bold tracking-wider uppercase text-sm mb-3">
+                      {block.tag}
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight tracking-tight">
+                      {block.title}
+                    </h2>
                   </div>
-                  
-                  <h3 className="text-lg font-bold text-gray-900 font-poppins">{feature.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {feature.description}
+
+                  <p className="text-gray-500 text-lg leading-relaxed">
+                    {block.description}
                   </p>
-                  
-                  {/* Decorative line on hover */}
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 group-hover:w-full transition-all duration-500" />
-                </motion.div>
-              ))}
+
+                  <ul className="space-y-4">
+                    {block.highlights.map((h, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="w-6 h-6 rounded-lg bg-[#FFB800]/15 flex items-center justify-center shrink-0 mt-0.5">
+                          <h.icon className="w-3.5 h-3.5 text-[#FFB800]" />
+                        </div>
+                        <span className="text-gray-700 text-sm font-medium leading-relaxed">
+                          {h.text}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    href={block.cta.href}
+                    className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#FFB800] text-[#111827] font-bold rounded-full hover:bg-[#ffca28] transition-all shadow-[0_4px_20px_rgba(255,184,0,0.3)] group active:scale-95 text-sm"
+                  >
+                    {block.cta.label}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+
+                {/* Image */}
+                <div className={`relative ${block.imageLeft ? "lg:order-1" : "lg:order-2"}`}>
+                  <div className="relative h-96 md:h-[480px] rounded-3xl overflow-hidden shadow-xl">
+                    <Image
+                      src={block.image}
+                      alt={block.title}
+                      fill
+                      className="object-cover"
+                      unoptimized
+                    />
+                  </div>
+                  {/* Yellow sparkle decoration (like SocialBee's star shapes) */}
+                  <div className="absolute -bottom-4 -right-4 w-16 h-16 text-[#FFB800]/30">
+                    <svg viewBox="0 0 60 60" fill="currentColor">
+                      <path d="M30 0 L33 27 L60 30 L33 33 L30 60 L27 33 L0 30 L27 27 Z" />
+                    </svg>
+                  </div>
+                  <div className="absolute -top-3 -left-3 w-10 h-10 text-[#FFB800]/20">
+                    <svg viewBox="0 0 60 60" fill="currentColor">
+                      <path d="M30 0 L33 27 L60 30 L33 33 L30 60 L27 33 L0 30 L27 27 Z" />
+                    </svg>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            {/* Image with gradient overlay */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl z-10">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-indigo-600/20 z-10" />
-              <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80"
-                alt="Our Team Collaborating"
-                className="w-full h-full object-cover aspect-[4/5]"
-              />
-            </div>
-            
-            {/* Enhanced decorative blobs */}
-            <div className="absolute -top-10 -right-10 w-72 h-72 bg-gradient-to-br from-blue-400/30 to-indigo-400/30 rounded-full blur-3xl opacity-60 z-0 animate-pulse" />
-            <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-gradient-to-tr from-purple-400/30 to-pink-400/30 rounded-full blur-3xl opacity-60 z-0 animate-pulse delay-1000" />
-            
-            {/* Floating gradient border */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 opacity-20 blur-2xl -z-10" />
-          </motion.div>
-        </div>
-      </div>
+        );
+      })}
     </section>
   );
 }

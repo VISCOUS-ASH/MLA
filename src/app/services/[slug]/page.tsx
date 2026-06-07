@@ -64,7 +64,7 @@ export default function ServiceDetailPage() {
         <div className="max-w-7xl mx-auto px-6">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-blue-600 font-semibold mb-12 hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-[#B98100] font-semibold mb-12 hover:gap-3 transition-all"
           >
             <ArrowLeft className="w-5 h-5" /> Back to All Services
           </Link>
@@ -75,12 +75,12 @@ export default function ServiceDetailPage() {
               animate={{ opacity: 1, x: 0 }}
               className="space-y-8"
             >
-              <div className="w-20 h-20 rounded-2xl bg-blue-600 flex items-center justify-center shadow-xl shadow-blue-200">
-                <service.icon className="w-10 h-10 text-white" />
+              <div className="w-20 h-20 rounded-2xl bg-[#FFB800] flex items-center justify-center shadow-xl shadow-[#FFB800]/20">
+                <service.icon className="w-10 h-10 text-[#081120]" />
               </div>
               <h2 className="text-4xl font-bold font-poppins text-gray-900 leading-tight">
                 Transforming Your Digital Presence through <br />
-                <span className="text-blue-600">{service.title}</span>
+                <span className="text-[#B98100]">{service.title}</span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg">
                 {service.content}
@@ -89,7 +89,7 @@ export default function ServiceDetailPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {service.features.map((feature: string, index: number) => (
                   <div key={index} className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
-                    <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                    <CheckCircle2 className="w-5 h-5 text-[#B98100]" />
                     <span className="font-medium text-gray-700">{feature}</span>
                   </div>
                 ))}
@@ -98,7 +98,7 @@ export default function ServiceDetailPage() {
               <div className="pt-8">
                 <Link
                   href="/contact"
-                  className="px-10 py-5 bg-gray-900 text-white font-bold rounded-full hover:bg-blue-600 transition-all shadow-xl active:scale-95 inline-block"
+                  className="px-10 py-5 gold-button font-bold rounded-full inline-block"
                 >
                   Request a Custom Strategy
                 </Link>
@@ -117,7 +117,7 @@ export default function ServiceDetailPage() {
                   alt={service.title}
                   className="w-full h-full object-cover aspect-[4/5]"
                 />
-                <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-[#FFB800]/10 mix-blend-multiply" />
               </div>
               
               {/* Floating Benefit Card */}
@@ -126,7 +126,7 @@ export default function ServiceDetailPage() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 max-w-[280px]"
               >
-                <p className="text-3xl font-bold text-blue-600 mb-2 font-poppins">100%</p>
+                <p className="text-3xl font-bold text-[#B98100] mb-2 font-poppins">100%</p>
                 <p className="text-sm text-gray-500 font-medium">Transparency in reporting and campaign execution.</p>
               </motion.div>
             </motion.div>

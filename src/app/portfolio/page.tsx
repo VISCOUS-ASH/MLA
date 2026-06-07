@@ -72,7 +72,7 @@ export default function PortfolioPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-8 py-3 rounded-full font-bold transition-all duration-300 ${
                   activeCategory === cat
-                    ? "bg-blue-600 text-white shadow-lg"
+                    ? "bg-[#FFB800] text-[#081120] shadow-lg"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -87,7 +87,7 @@ export default function PortfolioPage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => (
+              {filteredProjects.map((project) => (
                 <motion.div
                   key={project.title}
                   layout
@@ -106,13 +106,13 @@ export default function PortfolioPage() {
                   {/* Overlay Content */}
                   <div className="absolute inset-0 p-10 flex flex-col justify-end bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent">
                     <motion.div className="space-y-4 translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
-                      <span className="inline-block px-4 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-widest">
+                      <span className="inline-block px-4 py-1 rounded-full bg-[#FFB800] text-[#081120] text-xs font-bold uppercase tracking-widest">
                         {project.category}
                       </span>
                       <h3 className="text-3xl font-bold text-white font-poppins">{project.title}</h3>
                       <div className="pt-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                         <div>
-                          <p className="text-blue-400 text-sm font-bold uppercase tracking-wide">Result</p>
+                          <p className="text-[#FFB800] text-sm font-bold uppercase tracking-wide">Result</p>
                           <p className="text-white text-lg font-semibold">{project.result}</p>
                         </div>
                         <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-gray-900 transform rotate-45 group-hover:rotate-0 transition-transform duration-500">
@@ -136,7 +136,7 @@ export default function PortfolioPage() {
             </p>
             <Link
               href="/contact"
-              className="px-10 py-5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-all shadow-xl active:scale-95 inline-flex items-center gap-3 group"
+              className="px-10 py-5 bg-[#FFB800] text-[#081120] font-bold rounded-full hover:bg-[#ffca28] transition-all shadow-xl active:scale-95 inline-flex items-center gap-3 group"
             >
               Start Your Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>

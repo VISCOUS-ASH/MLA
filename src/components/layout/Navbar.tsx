@@ -32,47 +32,58 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 60);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-5">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4">
       <div
-  className={cn(
-    "max-w-[1600px] mx-auto flex items-center justify-between rounded-[32px] border transition-all duration-300 px-6 lg:px-10",
-    scrolled
-      ? "bg-[#081120]/90 border-white/10 backdrop-blur-2xl shadow-2xl py-4"
-      : "bg-[#081120]/55 border-white/15 backdrop-blur-xl py-5"
-  )}
->
+        className={cn(
+          "max-w-400 mx-auto flex items-center justify-between rounded-4xl border transition-all duration-300 px-6 lg:px-10",
+          scrolled
+            ? "bg-white/92 border-gray-200 shadow-lg backdrop-blur-xl py-3"
+            : "bg-[#081120]/60 border-white/10 backdrop-blur-xl py-4"
+        )}
+      >
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-[34px] font-extrabold tracking-[-1px] text-white">
-  MEDIA <span className="text-blue-500">LIFT</span>
-</span>
+          <span
+            className={cn(
+              "text-[28px] font-extrabold tracking-[-1px] transition-colors duration-300",
+              scrolled ? "text-gray-900" : "text-white"
+            )}
+          >
+            MEDIA{" "}
+            <span className="text-[#FFB800]">LIFT</span>
+          </span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-12">
+        <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <div key={link.name} className="relative group">
               <Link
                 href={link.href}
-                className="text-[17px] font-medium text-white/80 hover:text-white transition-all duration-300 flex items-center gap-1"
+                className={cn(
+                  "text-[15px] font-medium transition-all duration-300 flex items-center gap-1",
+                  scrolled
+                    ? "text-gray-600 hover:text-gray-900"
+                    : "text-white/80 hover:text-white"
+                )}
               >
                 {link.name}
-                {link.submenu && <ChevronDown className="w-4 h-4" />}
+                {link.submenu && <ChevronDown className="w-3.5 h-3.5" />}
               </Link>
               {link.submenu && (
-                <div className="absolute top-full left-0 mt-5 w-64 bg-[#0f172a]/95 backdrop-blur-2xl rounded-2xl border border-white/10 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-3 group-hover:translate-y-0">
+                <div className="absolute top-full left-0 mt-5 w-64 bg-white rounded-2xl border border-gray-100 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-3 group-hover:translate-y-0">
                   <div className="py-2">
                     {link.submenu.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="block px-5 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200"
+                        className="block px-5 py-3 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-all duration-200"
                       >
                         {item.name}
                       </Link>
@@ -84,7 +95,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="px-8 py-4 bg-blue-600 text-white text-base font-semibold rounded-full hover:bg-blue-500 transition-all duration-300 shadow-[0_10px_30px_rgba(37,99,235,0.45)] hover:scale-[1.03] active:scale-95"
+            className="px-6 py-3 bg-[#FFB800] text-[#111827] text-sm font-bold rounded-full hover:bg-[#ffca28] transition-all duration-300 shadow-[0_4px_20px_rgba(255,184,0,0.35)] hover:scale-[1.03] active:scale-95"
           >
             Get Started
           </Link>
@@ -92,10 +103,13 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-gray-700"
+          className={cn(
+            "lg:hidden p-2 transition-colors duration-300",
+            scrolled ? "text-gray-700" : "text-white"
+          )}
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X /> : <Menu />}
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
@@ -106,14 +120,14 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+            className="lg:hidden bg-white border border-gray-100 rounded-2xl mt-2 mx-0 shadow-2xl overflow-hidden"
           >
             <div className="flex flex-col p-6 space-y-4">
               {navLinks.map((link) => (
                 <div key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-lg font-medium text-gray-800"
+                    className="text-base font-medium text-gray-800 hover:text-gray-900"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}
@@ -124,7 +138,7 @@ export default function Navbar() {
                         <Link
                           key={item.name}
                           href={item.href}
-                          className="block text-sm text-gray-500"
+                          className="block text-sm text-gray-500 hover:text-gray-700"
                           onClick={() => setIsOpen(false)}
                         >
                           {item.name}
@@ -136,7 +150,7 @@ export default function Navbar() {
               ))}
               <Link
                 href="/contact"
-                className="w-full py-3 bg-blue-600 text-white text-center font-semibold rounded-xl"
+                className="w-full py-3 bg-[#FFB800] text-[#111827] text-center font-bold rounded-full hover:bg-[#ffca28] transition-all"
                 onClick={() => setIsOpen(false)}
               >
                 Get Started
