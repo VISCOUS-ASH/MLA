@@ -15,10 +15,12 @@ const footerLinks = [
   {
     title: "Services",
     links: [
-      { name: "SEO Optimization", href: "/services/seo" },
-      { name: "Social Media", href: "/services/smm" },
-      { name: "Web Development", href: "/services/web-dev" },
-      { name: "Brand Strategy", href: "/services/branding" },
+      { name: "Business Consultancy", href: "/services/business-consultancy" },
+      { name: "Social Media Management", href: "/services/social-media-management" },
+      { name: "Content Marketing", href: "/services/content-marketing" },
+      { name: "Branding & Designing", href: "/services/branding-designing" },
+      { name: "Graphic Design & Video Editing", href: "/services/graphic-design-video-editing" },
+      { name: "Web Development", href: "/services/web-development" },
     ],
   },
   {

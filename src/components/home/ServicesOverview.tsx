@@ -2,76 +2,76 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Share2, FileText, Users, Globe, BarChart3, ArrowRight } from "lucide-react";
+import { ArrowRight, Users, Share2, FileText, Palette, Video, Monitor } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 const services = [
   {
-    id: "seo",
-    label: "SEO",
-    title: "Dominate search results and drive organic traffic",
+    id: "consultancy",
+    label: "Consultancy",
+    title: "Strategic Guidance for Growth",
     description:
-      "Boost your organic visibility with data-driven SEO strategies. From technical audits to content optimization, we help you rank higher and convert better.",
-    icon: Search,
-    href: "/services/seo",
-    highlights: ["Keyword research & strategy", "Technical SEO audits", "Link building campaigns", "Monthly ranking reports"],
-    image: "https://images.unsplash.com/photo-1571715268978-353edd72f32a?q=80&w=1200&auto=format&fit=crop",
+      "Expert business consultancy to optimize operations, improve strategy, and drive sustainable growth for your organization.",
+    icon: Users,
+    href: "/services/business-consultancy",
+    highlights: ["Business Strategy", "Operations Optimization", "Market Analysis", "Growth Planning"],
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    id: "smm",
+    id: "social",
     label: "Social Media",
-    title: "Build a loyal audience across every platform",
+    title: "Connect, Engage, Grow",
     description:
-      "Engage your target audience with creative content and consistent posting. We manage your social presence so you can focus on your business.",
+      "Comprehensive social media management to build your brand presence, engage your audience, and drive conversions.",
     icon: Share2,
-    href: "/services/smm",
-    highlights: ["Content calendars", "Community management", "Paid social campaigns", "Performance analytics"],
+    href: "/services/social-media-management",
+    highlights: ["Platform Strategy", "Content Creation", "Community Management", "Paid Social Campaigns"],
     image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1200&auto=format&fit=crop",
   },
   {
     id: "content",
     label: "Content",
-    title: "Stories that resonate and convert visitors",
+    title: "Stories That Convert",
     description:
-      "Compelling blog posts, videos, and copy that attract, engage, and convert. We craft content that positions you as an authority in your industry.",
+      "Strategic content creation that educates, entertains, and converts your target audience into loyal customers.",
     icon: FileText,
-    href: "/services/content",
-    highlights: ["Blog writing & strategy", "Video scripts & production", "Email newsletters", "Landing page copy"],
+    href: "/services/content-marketing",
+    highlights: ["Content Strategy", "Copywriting", "Blog Writing", "Email Marketing"],
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    id: "influencer",
-    label: "Influencer",
-    title: "Amplify your brand with the right voices",
+    id: "branding",
+    label: "Branding",
+    title: "Identity That Resonates",
     description:
-      "Connect with influencers who truly align with your brand. We handle outreach, campaign management, and performance tracking end-to-end.",
-    icon: Users,
-    href: "/services/influencer",
-    highlights: ["Creator discovery & vetting", "Campaign briefs & coordination", "UGC content strategy", "ROI reporting"],
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+      "Complete branding solutions to create a unique and memorable identity that sets you apart from the competition.",
+    icon: Palette,
+    href: "/services/branding-designing",
+    highlights: ["Brand Identity Design", "Visual Identity", "Style Guides", "Brand Messaging"],
+    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    id: "design",
+    label: "Design",
+    title: "Visuals That Captivate",
+    description:
+      "High-impact graphic design and professional video editing to communicate your personalized message visually.",
+    icon: Video,
+    href: "/services/graphic-design-video-editing",
+    highlights: ["Graphic Design", "Video Editing", "Motion Graphics", "Creative Direction"],
+    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200&auto=format&fit=crop",
   },
   {
     id: "web",
     label: "Web Dev",
-    title: "High-performance websites that convert visitors",
+    title: "Digital Experiences Built to Last",
     description:
-      "Beautiful, fast, and conversion-optimized websites. We build with the latest technologies for seamless user experiences across all devices.",
-    icon: Globe,
-    href: "/services/web-dev",
-    highlights: ["Custom design & development", "Core Web Vitals optimization", "CMS & e-commerce", "Ongoing maintenance"],
+      "Custom web development solutions using modern technologies to build fast, secure, and scalable websites.",
+    icon: Monitor,
+    href: "/services/web-development",
+    highlights: ["Custom Development", "Responsive Design", "Performance Tuning", "CMS Integration"],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    id: "brand",
-    label: "Branding",
-    title: "Build a brand that stands out and sticks",
-    description:
-      "Develop a unique identity and positioning strategy. From logo to messaging, we craft brands that create lasting impressions.",
-    icon: BarChart3,
-    href: "/services/branding",
-    highlights: ["Brand identity design", "Messaging & positioning", "Style guide creation", "Competitive analysis"],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
@@ -83,21 +83,18 @@ export default function ServicesOverview() {
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
         <div className="text-center mb-14">
           <span className="inline-block text-[#FFB800] font-bold tracking-wider uppercase text-sm mb-3">
             Our Services
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-tight">
-            Stop juggling agencies — get{" "}
-            <span className="text-[#FFB800]">everything in one place</span>
+            Comprehensive digital solutions to help your business grow and succeed
           </h2>
           <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
-            From SEO to social media, content to branding — we handle every channel while keeping everything organized.
+            From business consultancy to web development, we offer end-to-end digital solutions tailored to your needs.
           </p>
         </div>
 
-        {/* Tab Nav */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {services.map((s) => {
             const TabIcon = s.icon;
@@ -118,7 +115,6 @@ export default function ServicesOverview() {
           })}
         </div>
 
-        {/* Tab Content */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
@@ -128,7 +124,6 @@ export default function ServicesOverview() {
             transition={{ duration: 0.35, ease: "easeOut" }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           >
-            {/* Left: Text */}
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#FFB800]/15 flex items-center justify-center">
@@ -167,7 +162,6 @@ export default function ServicesOverview() {
               </Link>
             </div>
 
-            {/* Right: Screenshot */}
             <div className="relative">
               <div className="relative h-105 rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
                 <Image
@@ -179,14 +173,12 @@ export default function ServicesOverview() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
               </div>
-              {/* Decorative yellow circle */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#FFB800]/15 rounded-full blur-2xl -z-10" />
               <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#FFB800]/10 rounded-full blur-xl -z-10" />
             </div>
           </motion.div>
         </AnimatePresence>
 
-        {/* Bottom link */}
         <div className="mt-16 text-center">
           <Link
             href="/services"

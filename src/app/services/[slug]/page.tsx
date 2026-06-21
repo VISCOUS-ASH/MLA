@@ -3,8 +3,9 @@
 import { useParams } from "next/navigation";
 import PageHeader from "@/components/ui/PageHeader";
 import { motion } from "framer-motion";
-import { Search, Share2, CheckCircle2, ArrowLeft, LucideIcon } from "lucide-react";
+import { CheckCircle2, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { Users, Share2, FileText, Palette, Video, Monitor, LucideIcon } from "lucide-react";
 
 interface ServiceInfo {
   title: string;
@@ -16,44 +17,106 @@ interface ServiceInfo {
 }
 
 const servicesData: Record<string, ServiceInfo> = {
-  seo: {
-    title: "SEO Optimization",
-    icon: Search,
-    description: "Dominate search engine results and drive sustainable organic growth.",
-    content: "Our search engine optimization strategy is built on data, not guesswork. We perform deep technical audits, comprehensive keyword research, and build high-quality backlink profiles that help your brand stay ahead of the competition.",
+  "business-consultancy": {
+    title: "Business Consultancy",
+    icon: Users,
+    description: "Strategic business guidance to optimize operations and drive sustainable growth.",
+    content: "Our business consultancy services are designed to help you identify opportunities, overcome challenges, and build a roadmap for long-term success. We work closely with your leadership team to analyze operations, refine strategy, and implement sustainable growth initiatives that move the needle.",
     features: [
-      "Technical SEO Audit & Cleanup",
-      "On-Page Content Optimization",
-      "Strategic Keyword Research",
-      "High-Authority Link Building",
-      "Local SEO Optimization",
-      "Performance Monitoring & Reporting",
+      "Business Strategy & Planning",
+      "Operations Optimization",
+      "Market Research & Analysis",
+      "Growth Roadmap Development",
+      "Financial Planning Support",
+      "Performance Tracking",
     ],
-    image: "https://images.unsplash.com/photo-1571786256220-4cf2ebe45c60?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
   },
-  smm: {
-    title: "Social Media Marketing",
+  "social-media-management": {
+    title: "Social Media Management",
     icon: Share2,
-    description: "Build a community, foster engagement, and turn followers into customers.",
-    content: "We create compelling social media campaigns that resonate with your audience on a personal level. From content creation to community management, we ensure your brand&apos;s voice is heard across all major platforms.",
+    description: "Build a loyal community and drive engagement across all major platforms.",
+    content: "We manage your social media presence end-to-end — from content calendars and creative production to community engagement and paid amplification. Our data-informed approach ensures every post, story, and ad contributes to your brand goals.",
     features: [
       "Platform-Specific Strategy",
-      "Creative Content Production",
-      "Paid Social Advertising",
+      "Content Creation & Curation",
       "Community Management",
-      "Influencer Outreach",
-      "Detailed Analytics & Insights",
+      "Paid Social Campaigns",
+      "Influencer Collaboration",
+      "Performance Analytics",
     ],
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+  },
+  "content-marketing": {
+    title: "Content Marketing",
+    icon: FileText,
+    description: "Compelling stories and strategic content that educates, engages, and converts.",
+    content: "Great content is the backbone of any successful digital strategy. We create blog posts, whitepapers, email newsletters, video scripts, and landing page copy that position your brand as an authority and drive measurable conversions.",
+    features: [
+      "Content Strategy & Editorial Calendars",
+      "SEO-Optimized Blog Writing",
+      "Website Copy & Landing Pages",
+      "Email Marketing Campaigns",
+      "Video Scripts & Storyboards",
+      "Content Performance Analysis",
+    ],
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+  },
+  "branding-designing": {
+    title: "Branding & Designing",
+    icon: Palette,
+    description: "A unique and memorable brand identity that sets you apart from the competition.",
+    content: "Your brand is more than a logo — it is the complete experience your audience has with your business. From visual identity systems and typography to tone of voice and brand guidelines, we craft cohesive identities that resonate and last.",
+    features: [
+      "Brand Strategy & Positioning",
+      "Logo & Visual Identity Design",
+      "Brand Style Guides",
+      "Packaging Design",
+      "Stationery & Collateral",
+      "Brand Messaging & Voice",
+    ],
+    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+  },
+  "graphic-design-video-editing": {
+    title: "Graphic Design & Video Editing",
+    icon: Video,
+    description: "High-impact visuals and professional video editing that captivate your audience.",
+    content: "From eye-catching social media creatives to polished corporate videos, our design and editing team brings your ideas to life. We blend aesthetics with strategy to ensure every visual asset supports your marketing objectives.",
+    features: [
+      "Social Media Creatives",
+      "Advertisement Design",
+      "Corporate Video Editing",
+      "Motion Graphics & Animation",
+      "Presentation Design",
+      "Print & Digital Assets",
+    ],
+    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+  },
+  "web-development": {
+    title: "Web Development",
+    icon: Monitor,
+    description: "Fast, secure, and scalable websites built with modern technologies.",
+    content: "We design and develop custom websites that look stunning and perform flawlessly. Using modern frameworks and best practices, we build responsive, SEO-friendly, and high-converting digital experiences tailored to your business needs.",
+    features: [
+      "Custom Website Design",
+      "React / Next.js Development",
+      "E-commerce Solutions",
+      "CMS Integration",
+      "Performance Optimization",
+      "Ongoing Maintenance & Support",
+    ],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
   },
 };
 
 export default function ServiceDetailPage() {
   const { slug } = useParams();
-  const service = servicesData[slug as string] || servicesData.seo; // Fallback to SEO for demo
+  const service = servicesData[slug as string] || servicesData["business-consultancy"];
+
+  const ServiceIcon = service.icon;
 
   return (
-    <>
+    <div className="overflow-hidden">
       <PageHeader
         title={service.title}
         subtitle="Service Detail"
@@ -76,7 +139,7 @@ export default function ServiceDetailPage() {
               className="space-y-8"
             >
               <div className="w-20 h-20 rounded-2xl bg-[#FFB800] flex items-center justify-center shadow-xl shadow-[#FFB800]/20">
-                <service.icon className="w-10 h-10 text-[#081120]" />
+                <ServiceIcon className="w-10 h-10 text-[#081120]" />
               </div>
               <h2 className="text-4xl font-bold font-poppins text-gray-900 leading-tight">
                 Transforming Your Digital Presence through <br />
@@ -98,7 +161,7 @@ export default function ServiceDetailPage() {
               <div className="pt-8">
                 <Link
                   href="/contact"
-                  className="px-10 py-5 gold-button font-bold rounded-full inline-block"
+                  className="px-10 py-5 bg-[#FFB800] text-[#081120] font-bold rounded-full hover:bg-[#ffca28] transition-all shadow-xl active:scale-95 inline-block"
                 >
                   Request a Custom Strategy
                 </Link>
@@ -120,7 +183,6 @@ export default function ServiceDetailPage() {
                 <div className="absolute inset-0 bg-[#FFB800]/10 mix-blend-multiply" />
               </div>
               
-              {/* Floating Benefit Card */}
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -133,6 +195,6 @@ export default function ServiceDetailPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

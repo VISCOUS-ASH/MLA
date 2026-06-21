@@ -2,7 +2,7 @@
 
 import SectionHeader from "@/components/ui/SectionHeader";
 import { motion, AnimatePresence } from "framer-motion";
-import { Target, Eye, Users, Rocket, Heart, X } from "lucide-react";
+import { Rocket, Heart, Target, X } from "lucide-react";
 import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 
@@ -52,7 +52,7 @@ const values = [
   {
     title: "Our Vision",
     description: "To be the global leader in digital transformation, setting new standards for creativity and ROI.",
-    icon: Eye,
+    icon: Rocket,
     color: "text-white",
     bg: "bg-[#081120]",
   },
@@ -81,7 +81,7 @@ const fadeInUp = {
     opacity: 1, 
     y: 0,
     transition: { 
-      type: "spring" as const,  // Add 'as const' to narrow the type
+      type: "spring" as const,
       stiffness: 100, 
       damping: 20 
     }
@@ -93,10 +93,7 @@ export default function AboutPage() {
 
   return (
     <div className="overflow-hidden">
-      {/* ... (Hero, Story, Values sections) ... */}
-      {/* Enhanced Hero Section */}
       <section className="relative min-h-[70vh] flex items-center pt-32 pb-20 bg-[#0B1120] overflow-hidden">
-        {/* Animated Background Elements */}
         <motion.div 
           animate={{ 
             scale: [1, 1.2, 1],
@@ -114,7 +111,6 @@ export default function AboutPage() {
           className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" 
         />
         
-        {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -183,7 +179,6 @@ export default function AboutPage() {
                 />
               </div>
               
-              {/* Floating Element 1 */}
               <motion.div 
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -200,7 +195,6 @@ export default function AboutPage() {
                 </div>
               </motion.div>
 
-              {/* Floating Element 2 */}
               <motion.div 
                 animate={{ y: [0, 20, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
@@ -222,7 +216,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -241,7 +234,6 @@ export default function AboutPage() {
                 />
               </div>
               
-              {/* Floating Badge */}
               <motion.div 
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -251,7 +243,6 @@ export default function AboutPage() {
                 <p className="text-sm font-medium opacity-80 uppercase tracking-wider">Years of Excellence</p>
               </motion.div>
 
-              {/* Decorative background element */}
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#FFB800]/12 rounded-full blur-3xl -z-10" />
             </motion.div>
 
@@ -286,7 +277,7 @@ export default function AboutPage() {
                 </div>
                 <div className="flex items-center gap-3 group">
                   <div className="w-10 h-10 rounded-full bg-[#FFB800]/12 flex items-center justify-center group-hover:bg-[#FFB800]/20 transition-colors">
-                    <Users className="w-5 h-5 text-[#B98100]" />
+                    <Heart className="w-5 h-5 text-[#B98100]" />
                   </div>
                   <span className="font-semibold text-gray-900">Expert Team</span>
                 </div>
@@ -296,7 +287,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
@@ -329,7 +319,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader
@@ -366,35 +355,8 @@ export default function AboutPage() {
                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <h4 className="text-xl font-bold text-white font-poppins">{member.name}</h4>
                   <p className="text-[#FFB800] font-medium">{member.role}</p>
-                    {/* Social Icons */}
-  <div className="flex items-center gap-3 mt-4">
-    <a
-      href={member.socials.linkedin}
-      onClick={(e) => e.stopPropagation()}
-      className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-[#FFB800] hover:text-[#081120] transition-all duration-300"
-    >
-      <FaLinkedin className="w-4 h-4" />
-    </a>
-
-    <a
-      href={member.socials.twitter}
-      onClick={(e) => e.stopPropagation()}
-      className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-black transition-all duration-300"
-    >
-      <FaXTwitter className="w-4 h-4" />
-    </a>
-  </div>
-                  
-                  {/* <motion.div 
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    className="mt-4 flex items-center text-white text-xs font-bold uppercase tracking-widest gap-2"
-                  >
-                    View Profile <ArrowRight className="w-4 h-4" />
-                  </motion.div> */}
                 </div>
 
-                {/* Decorative border reveal on hover */}
                 <div className="absolute inset-0 border-2 border-[#FFB800]/50 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none scale-95 group-hover:scale-100 transition-transform duration-300" />
               </motion.div>
             ))}
@@ -402,7 +364,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Member Modal */}
       <AnimatePresence>
         {selectedMember && (
           <motion.div
@@ -428,7 +389,6 @@ export default function AboutPage() {
               </button>
 
               <div className="flex flex-col md:flex-row">
-                {/* Image side */}
                 <div className="md:w-2/5 aspect-[4/5] md:aspect-auto relative">
                   <img 
                     src={selectedMember.image} 
@@ -442,7 +402,6 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* Content side */}
                 <div className="md:w-3/5 p-8 md:p-12">
                   <div className="hidden md:block mb-8">
                     <h2 className="text-4xl font-bold text-gray-900 font-poppins mb-2">{selectedMember.name}</h2>

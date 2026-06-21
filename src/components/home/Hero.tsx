@@ -7,18 +7,12 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#0a0f1e] pt-32 pb-0">
-      {/* Subtle grid texture */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:48px_48px]" />
-
-      {/* Ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#FFB800]/8 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-blue-700/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-indigo-700/10 rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-
-        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -29,7 +23,6 @@ export default function Hero() {
           Results-Driven Digital Marketing Agency
         </motion.div>
 
-        {/* Main Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,7 +33,6 @@ export default function Hero() {
           <span className="text-[#FFB800]">digital channels</span>
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,7 +42,6 @@ export default function Hero() {
           Drive traffic, build your brand, and scale revenue. Strategy, execution, and measurable results — all in one agency.
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -73,7 +64,6 @@ export default function Hero() {
           </Link>
         </motion.div>
 
-        {/* Trust Signals */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -92,14 +82,12 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Dashboard / Stats Preview */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.55 }}
           className="mt-16 relative"
         >
-          {/* Floating card — top left */}
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -117,7 +105,6 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Floating card — top right */}
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -137,12 +124,9 @@ export default function Hero() {
             <p className="text-xs text-gray-400 mt-1">4.9/5 from 1,200+ clients</p>
           </motion.div>
 
-          {/* Main stats card */}
           <div className="relative max-w-4xl mx-auto bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.4)]">
-            {/* Inner gradient border effect */}
             <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
 
-            {/* Stats grid */}
             <div className="grid grid-cols-3 divide-x divide-white/10">
               {[
                 { value: "2,500+", label: "Campaigns Launched", icon: "🚀" },
@@ -159,7 +143,6 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* Bottom platform row */}
             <div className="border-t border-white/10 px-8 py-5 flex items-center justify-center gap-3 flex-wrap">
               <p className="text-white/35 text-xs font-medium mr-2">We grow you on:</p>
               {["Google", "Meta", "Instagram", "LinkedIn", "TikTok", "YouTube"].map((p, i) => (

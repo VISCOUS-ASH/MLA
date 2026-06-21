@@ -6,45 +6,31 @@ import { Quote, Star } from "lucide-react";
 
 const allTestimonials = [
   {
-    name: "Sarah Johnson",
-    role: "CEO at TechFlow",
-    content: "Working with Media Lift Advisor has been a game-changer for our business. Our organic traffic increased by 200% within just 6 months. Their attention to detail and strategic approach is unmatched.",
-    avatar: "https://i.pravatar.cc/150?u=11",
+    name: "Founder & CEO",
+    role: "TechStart Solutions",
+    content: "Media Lift transformed our brand identity completely. Their creative approach and attention to detail exceeded our expectations. The team was professional and delivered on time.",
+    avatar: "https://i.pravatar.cc/150?u=41",
     rating: 5,
   },
   {
-    name: "Michael Chen",
-    role: "Marketing Director at Innovate",
-    content: "Their team is incredibly professional and data-driven. The ROI we've seen on our paid campaigns is far beyond our expectations. They really understand how to scale a digital brand.",
-    avatar: "https://i.pravatar.cc/150?u=12",
+    name: "Marketing Director",
+    role: "GreenLeaf Organics",
+    content: "Working with Media Lift was a game-changer for our social media presence. Our engagement increased by 300% within just 2 months. Highly recommend their services!",
+    avatar: "https://i.pravatar.cc/150?u=42",
     rating: 5,
   },
   {
-    name: "Emma Williams",
-    role: "Founder of StyleCo",
-    content: "The brand strategy they developed for us perfectly captured our essence. We've received so many compliments on our new digital presence. It's been a truly transformative experience.",
-    avatar: "https://i.pravatar.cc/150?u=13",
+    name: "Operations Manager",
+    role: "Verma Enterprises",
+    content: "The packaging design they created for our products was outstanding. It helped us stand out on retail shelves and boosted our sales significantly.",
+    avatar: "https://i.pravatar.cc/150?u=43",
     rating: 5,
   },
   {
-    name: "James Wilson",
-    role: "COO at Global Logistics",
-    content: "We were struggling with our digital transformation until we met the team at Media Lift. They streamlined our processes and helped us reach a global audience effectively.",
-    avatar: "https://i.pravatar.cc/150?u=14",
-    rating: 5,
-  },
-  {
-    name: "Lisa Anderson",
-    role: "E-commerce Manager at Bloom",
-    content: "The new website they built for us is not only beautiful but also highly functional. Our conversion rates have improved by 35% since the launch.",
-    avatar: "https://i.pravatar.cc/150?u=15",
-    rating: 5,
-  },
-  {
-    name: "Robert Taylor",
-    role: "Founder of FitLife",
-    content: "Their social media management is top-notch. They've built an engaged community around our brand that translates into real sales every single month.",
-    avatar: "https://i.pravatar.cc/150?u=16",
+    name: "Managing Director",
+    role: "Singh Real Estate",
+    content: "Media Lift helped us create impactful billboard campaigns that generated quality leads. Their understanding of visual marketing is exceptional.",
+    avatar: "https://i.pravatar.cc/150?u=44",
     rating: 5,
   },
 ];
@@ -55,12 +41,12 @@ export default function TestimonialsPage() {
       <PageHeader
         title="What Our Clients Say"
         subtitle="Testimonials"
-        description="We take pride in our clients' success. Hear directly from the brands we've helped empower and grow."
+        description="Don't just take our word for it. Here's what our clients have to say about working with us."
       />
 
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {allTestimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
@@ -68,16 +54,16 @@ export default function TestimonialsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-10 rounded-[2rem] border border-gray-100 flex flex-col justify-between interactive-card group"
+                className="bg-white p-10 rounded-[2rem] border border-gray-100 flex flex-col justify-between interactive-card group shadow-sm hover:shadow-lg"
               >
                 <div className="space-y-6">
                   <div className="flex items-center gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                      <Star key={i} className="w-4 h-4 text-[#FFB800] fill-[#FFB800]" />
                     ))}
                   </div>
                   <div className="w-12 h-12 bg-[#FFB800] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Quote className="w-6 h-6 text-[#081120] fill-[#081120]" />
+                    <Quote className="w-6 h-6 text-[#0B1120] fill-[#0B1120]" />
                   </div>
                   <p className="text-gray-600 italic leading-relaxed text-lg">
                     &quot;{testimonial.content}&quot;
@@ -98,26 +84,25 @@ export default function TestimonialsPage() {
             ))}
           </div>
 
-          {/* Stats Callout */}
           <div className="mt-24 text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-block p-12 bg-[#081120] rounded-[3rem] text-white shadow-2xl"
+              className="inline-block p-12 bg-[#0B1120] rounded-[3rem] text-white shadow-2xl"
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
                 <div>
+                  <p className="text-5xl font-bold font-poppins text-[#FFB800] mb-2">300%</p>
+                  <p className="text-gray-400 font-medium">Avg. Engagement Increase</p>
+                </div>
+                <div>
+                  <p className="text-5xl font-bold font-poppins text-[#FFB800] mb-2">50+</p>
+                  <p className="text-gray-400 font-medium">Brands Served</p>
+                </div>
+                <div>
                   <p className="text-5xl font-bold font-poppins text-[#FFB800] mb-2">98%</p>
-                  <p className="text-gray-400 font-medium">Client Retention Rate</p>
-                </div>
-                <div>
-                  <p className="text-5xl font-bold font-poppins text-[#FFB800] mb-2">500+</p>
-                  <p className="text-gray-400 font-medium">Successful Projects</p>
-                </div>
-                <div>
-                  <p className="text-5xl font-bold font-poppins text-[#FFB800] mb-2">4.9/5</p>
-                  <p className="text-gray-400 font-medium">Average Client Rating</p>
+                  <p className="text-gray-400 font-medium">Client Satisfaction</p>
                 </div>
               </div>
             </motion.div>

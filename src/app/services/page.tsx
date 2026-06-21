@@ -3,98 +3,100 @@
 import PageHeader from "@/components/ui/PageHeader";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { motion } from "framer-motion";
-import { Search, Share2, FileText, Users, Globe, BarChart3, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Users, Share2, FileText, Palette, Video, Monitor, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 const services = [
   {
-    title: "SEO Optimization",
-    slug: "seo",
-    description: "Drive more organic traffic with our comprehensive SEO strategies, from technical audits to keyword research.",
-    icon: Search,
-    features: ["Technical SEO", "On-Page Optimization", "Backlink Strategy", "Keyword Research"],
+    title: "Business Consultancy",
+    slug: "business-consultancy",
+    description: "Expert business consultancy to optimize operations, improve strategy, and drive sustainable growth for your organization.",
+    icon: Users,
+    features: ["Business Strategy", "Operations Optimization", "Market Analysis", "Growth Planning"],
     color: "blue",
   },
   {
     title: "Social Media Management",
-    slug: "smm",
-    description: "Build a strong social presence and engage with your audience where they are most active.",
+    slug: "social-media-management",
+    description: "Comprehensive social media management to build your brand presence, engage your audience, and drive conversions.",
     icon: Share2,
-    features: ["Platform Strategy", "Content Creation", "Community Management", "Paid Social Ads"],
+    features: ["Platform Strategy", "Content Creation", "Community Management", "Paid Social Campaigns"],
     color: "indigo",
   },
   {
     title: "Content Marketing",
-    slug: "content",
-    description: "Create high-value content that attracts, engages, and converts your target audience effectively.",
+    slug: "content-marketing",
+    description: "Strategic content creation that educates, entertains, and converts your target audience into loyal customers.",
     icon: FileText,
-    features: ["Blog Strategy", "Copywriting", "Video Content", "Email Marketing"],
+    features: ["Content Strategy", "Copywriting", "Blog Writing", "Email Marketing"],
     color: "purple",
   },
   {
-    title: "Paid Advertising",
-    slug: "paid-ads",
-    description: "Maximize your ROI with targeted PPC campaigns on Google, Meta, and other premium networks.",
-    icon: BarChart3,
-    features: ["Google Ads", "Meta Ads", "Retargeting", "Conversion Tracking"],
+    title: "Branding & Designing",
+    slug: "branding-designing",
+    description: "Complete branding solutions to create a unique and memorable identity that sets you apart from the competition.",
+    icon: Palette,
+    features: ["Brand Identity", "Visual Identity", "Style Guides", "Brand Messaging"],
     color: "pink",
   },
   {
-    title: "Web Design & Development",
-    slug: "web-dev",
-    description: "Convert visitors into customers with high-performance, mobile-first, and SEO-friendly websites.",
-    icon: Globe,
-    features: ["React/Next.js", "E-commerce", "Performance Tuning", "UI/UX Design"],
-    color: "cyan",
+    title: "Graphic Design & Video Editing",
+    slug: "graphic-design-video-editing",
+    description: "High-impact graphic design and professional video editing to communicate your personalized message visually.",
+    icon: Video,
+    features: ["Graphic Design", "Video Editing", "Motion Graphics", "Creative Direction"],
+    color: "orange",
   },
   {
-    title: "Brand Strategy",
-    slug: "branding",
-    description: "Define your unique brand voice and positioning to stand out in a crowded digital marketplace.",
-    icon: Users,
-    features: ["Brand Identity", "Market Research", "Positioning", "Visual Branding"],
-    color: "orange",
+    title: "Web Development",
+    slug: "web-development",
+    description: "Custom web development solutions using modern technologies to build fast, secure, and scalable websites.",
+    icon: Monitor,
+    features: ["Custom Development", "Responsive Design", "Performance Tuning", "CMS Integration"],
+    color: "cyan",
   },
 ];
 
 const colorVariants: Record<string, string> = {
-  blue: "from-[#FFB800] to-[#F97316]",
-  indigo: "from-[#0F172A] to-[#1F2937]",
-  purple: "from-[#FFB800] to-[#B98100]",
-  pink: "from-[#0EA5E9] to-[#0369A1]",
-  cyan: "from-[#14B8A6] to-[#0F766E]",
-  orange: "from-[#F97316] to-[#C2410C]",
+  blue: "from-[#FFB800] to-[#B98100]",
+  indigo: "from-[#0B1120] to-[#1a2540]",
+  purple: "from-[#FFB800] to-[#F97316]",
+  pink: "from-[#FFB800] to-[#E8970A]",
+  orange: "from-[#0B1120] to-[#1a2540]",
+  cyan: "from-[#FFB800] to-[#B98100]",
 };
 
 export default function ServicesPage() {
   return (
     <>
       <PageHeader
-        title="Solutions for Your Success"
-        subtitle="Our Services"
-        description="Comprehensive digital marketing services tailored to your business goals. We combine data, creativity, and technology to drive results."
+        title="Our Services"
+        subtitle="Solutions for Your Success"
+        description="Comprehensive digital solutions to help your business grow and succeed in the modern marketplace."
       />
 
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group bg-white rounded-[2rem] p-8 border border-gray-100 interactive-card"
-              >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${colorVariants[service.color]} flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform`}>
-                  <service.icon className="w-8 h-8 text-white" />
-                </div>
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className={`group bg-white rounded-[2rem] p-8 border border-gray-100 interactive-card mb-8 ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } flex flex-col md:flex-row gap-8 items-center`}
+            >
+              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${colorVariants[service.color]} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform shrink-0`}>
+                <service.icon className="w-8 h-8 text-white" />
+              </div>
+              <div className="flex-1">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 font-poppins">{service.title}</h3>
                 <p className="text-gray-600 mb-8 leading-relaxed">
                   {service.description}
                 </p>
-                <ul className="space-y-3 mb-10">
+                <ul className="space-y-3 mb-10 grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-sm text-gray-500">
                       <CheckCircle2 className="w-4 h-4 text-[#FFB800]" />
@@ -104,54 +106,14 @@ export default function ServicesPage() {
                 </ul>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="flex items-center justify-between px-6 py-4 bg-gray-50 rounded-xl group-hover:bg-[#FFB800] group-hover:text-[#081120] transition-colors duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-50 rounded-xl group-hover:bg-[#FFB800] group-hover:text-[#0B1120] transition-colors duration-300 font-bold"
                 >
-                  <span className="font-bold">Learn More</span>
+                  Learn More
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-24 bg-gray-900 text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionHeader
-            title="Our Strategic Approach"
-            subtitle="How We Work"
-            centered
-            className="text-white"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-16 relative">
-            {/* Connection Line */}
-            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-[#FFB800]/30 -translate-y-1/2 z-0" />
-            
-            {[
-              { step: "01", title: "Discovery", desc: "We learn your business, goals, and target audience." },
-              { step: "02", title: "Strategy", desc: "Crafting a data-driven roadmap for success." },
-              { step: "03", title: "Execution", desc: "Implementing campaigns with precision and care." },
-              { step: "04", title: "Analysis", desc: "Continuous monitoring and optimization for ROI." },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="relative z-10 bg-gray-800 p-8 rounded-3xl border border-gray-700 hover:border-[#FFB800] transition-colors group text-center"
-              >
-                <div className="text-4xl font-bold text-[#FFB800] mb-4 font-poppins opacity-50 group-hover:opacity-100 transition-opacity">
-                  {item.step}
-                </div>
-                <h4 className="text-xl font-bold mb-3 font-poppins">{item.title}</h4>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
     </>
