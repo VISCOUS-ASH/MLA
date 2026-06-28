@@ -52,15 +52,15 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-[#FFB800]" />
-                <span>hello@medialift.com</span>
+                <span>info@medialiftadvisor.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-[#FFB800]" />
-                <span>+1 (555) 000-0000</span>
+                <span>9610193337</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-[#FFB800]" />
-                <span>123 Digital Ave, Tech City, TC 10101</span>
+                <span>Hari Om Apartment, Near Hotel KPL Prime, Sohan Nagar Mansarovar, Jaipur 302020</span>
               </div>
             </div>
             <div className="flex space-x-4 pt-4">

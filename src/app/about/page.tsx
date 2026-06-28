@@ -8,37 +8,37 @@ import { useState } from "react";
 
 const team = [
   {
-    name: "Alex Rivera",
+    name: "Mahesh Rao",
     role: "Founder & CEO",
-    image: "https://i.pravatar.cc/300?u=alex",
+    image: "/images/FounderMahesh.png",
     bio: "With over 15 years of experience in digital transformation, Alex leads our vision to redefine how brands interact with their customers in the digital age.",
     skills: ["Strategic Planning", "Digital Transformation", "Leadership"],
     socials: { linkedin: "#", twitter: "#" }
   },
   {
-    name: "Sarah Jenkins",
-    role: "Head of Strategy",
-    image: "https://i.pravatar.cc/300?u=sarah",
-    bio: "Sarah is a data-driven strategist who has helped hundreds of brands scale their operations through innovative marketing frameworks.",
+    name: "Prashant",
+    role: "Co-Founder",
+    image: "/images/CofounderPrashant.jpeg",
+    bio: "Prashant is a data-driven strategist who has helped hundreds of brands scale their operations through innovative marketing frameworks.",
     skills: ["Market Analysis", "Growth Hacking", "Brand Positioning"],
     socials: { linkedin: "#", twitter: "#" }
   },
-  {
-    name: "David Chen",
-    role: "SEO Specialist",
-    image: "https://i.pravatar.cc/300?u=david",
-    bio: "David's technical SEO expertise ensures that our clients stay at the top of search results, driving sustainable organic growth.",
-    skills: ["Technical SEO", "Content Strategy", "Link Building"],
-    socials: { linkedin: "#", twitter: "#" }
-  },
-  {
-    name: "Maria Garcia",
-    role: "Creative Director",
-    image: "https://i.pravatar.cc/300?u=maria",
-    bio: "Maria brings stories to life through compelling visual design and creative direction, ensuring every brand touchpoint is memorable.",
-    skills: ["UX/UI Design", "Creative Direction", "Brand Identity"],
-    socials: { linkedin: "#", twitter: "#" }
-  },
+  // {
+  //   name: "David Chen",
+  //   role: "SEO Specialist",
+  //   image: "https://i.pravatar.cc/300?u=david",
+  //   bio: "David's technical SEO expertise ensures that our clients stay at the top of search results, driving sustainable organic growth.",
+  //   skills: ["Technical SEO", "Content Strategy", "Link Building"],
+  //   socials: { linkedin: "#", twitter: "#" }
+  // },
+  // {
+  //   name: "Maria Garcia",
+  //   role: "Creative Director",
+  //   image: "https://i.pravatar.cc/300?u=maria",
+  //   bio: "Maria brings stories to life through compelling visual design and creative direction, ensuring every brand touchpoint is memorable.",
+  //   skills: ["UX/UI Design", "Creative Direction", "Brand Identity"],
+  //   socials: { linkedin: "#", twitter: "#" }
+  // },
 ];
 
 const values = [

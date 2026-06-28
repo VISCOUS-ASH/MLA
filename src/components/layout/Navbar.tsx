@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -49,16 +50,23 @@ export default function Navbar() {
         )}
       >
         <Link href="/" className="flex items-center space-x-2">
-          <span
-            className={cn(
-              "text-[28px] font-extrabold tracking-[-1px] transition-colors duration-300",
-              scrolled ? "text-gray-900" : "text-white"
-            )}
-          >
-            MEDIA{" "}
-            <span className="text-[#FFB800]">LIFT</span>
-          </span>
-        </Link>
+  <Image
+    src="/images/logos/logo1.png"
+    alt="MediaLift Logo"
+    width={60}
+    height={60}
+    className="object-contain rounded-full"
+  />
+  <span
+    className={cn(
+      "text-[28px] font-extrabold tracking-[-1px] transition-colors duration-300",
+      scrolled ? "text-gray-900" : "text-white"
+    )}
+  >
+    MEDIA{" "}
+    <span className="text-[#FFB800]">LIFT</span>
+  </span>
+</Link>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-10">

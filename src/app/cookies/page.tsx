@@ -80,7 +80,7 @@ export default function CookiesPage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4 font-poppins">6. Contact Us</h2>
               <p className="text-gray-600 leading-relaxed">
-                If you have questions about our use of cookies, please contact us at <a href="mailto:hello@medialift.com" className="text-[#FFB800] hover:underline">hello@medialift.com</a>.
+                If you have questions about our use of cookies, please contact us at <a href="mailto:info@medialiftadvisor.com" className="text-[#FFB800] hover:underline">info@medialiftadvisor.com</a>.
               </p>
             </div>
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import PageHeader from "@/components/ui/PageHeader";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, MapPin, Send, MessageSquare, ChevronDown } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageSquare, ChevronDown, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import Link from "next/link";
 
 const faqs = [
@@ -26,8 +26,54 @@ const faqs = [
   },
 ];
 
+// ✅ Paste your Web3Forms Access Key here
+const WEB3FORMS_KEY = "d6c9d2f2-a694-4e8e-b0a6-1dbb089768eb";
+
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "General Inquiry",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: formData.name,
+          email: formData.email,
+          subject: `[MediaLift] ${formData.subject}`,
+          message: formData.message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", subject: "General Inquiry", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <>
@@ -51,9 +97,9 @@ export default function ContactPage() {
 
               <div className="space-y-8">
                 {[
-                  { icon: Mail, label: "Email Us", value: "hello@medialift.com", color: "bg-[#FFB800]/12 text-[#B98100]" },
-                  { icon: Phone, label: "Call Us", value: "+1 (555) 000-0000", color: "bg-[#081120] text-white" },
-                  { icon: MapPin, label: "Visit Us", value: "123 Digital Ave, Tech City, TC 101", color: "bg-gray-100 text-[#081120]" },
+                  { icon: Mail, label: "Email Us", value: "info@medialiftadvisor.com", color: "bg-[#FFB800]/12 text-[#B98100]" },
+                  { icon: Phone, label: "Call Us", value: "9610193337", color: "bg-[#081120] text-white" },
+                  { icon: MapPin, label: "Visit Us", value: "Hari Om Apartment, Near Hotel KPL Prime, Sohan Nagar Mansarovar, Jaipur 302020 101", color: "bg-gray-100 text-[#081120]" },
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
@@ -95,49 +141,115 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 className="bg-gray-50 p-8 md:p-12 rounded-[2rem] shadow-sm border border-gray-100 interactive-card"
               >
-                <form className="space-y-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Success State */}
+                <AnimatePresence>
+                  {status === "success" && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="flex flex-col items-center justify-center py-16 text-center gap-4"
+                    >
+                      <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center">
+                        <CheckCircle className="w-10 h-10 text-green-500" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 font-poppins">Message Sent!</h3>
+                      <p className="text-gray-600 max-w-sm">
+                        Thanks for reaching out. We'll get back to you within 24 hours.
+                      </p>
+                      <button
+                        onClick={() => setStatus("idle")}
+                        className="mt-4 px-8 py-3 bg-[#FFB800] text-[#081120] font-bold rounded-2xl hover:bg-[#ffca28] transition-all"
+                      >
+                        Send Another Message
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Form */}
+                {status !== "success" && (
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-gray-700 ml-1">Your Name</label>
+                        <input
+                          type="text"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="John Doe"
+                          className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-gray-700 ml-1">Email Address</label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="john@example.com"
+                          className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all"
+                        />
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 ml-1">Your Name</label>
-                      <input
-                        type="text"
-                        placeholder="John Doe"
-                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all"
+                      <label className="text-sm font-bold text-gray-700 ml-1">Subject</label>
+                      <select
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all appearance-none"
+                      >
+                        <option>General Inquiry</option>
+                        <option>SEO Services</option>
+                        <option>Social Media Marketing</option>
+                        <option>Website Development</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-gray-700 ml-1">Your Message</label>
+                      <textarea
+                        name="message"
+                        required
+                        rows={5}
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Tell us about your project..."
+                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all resize-none"
                       />
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 ml-1">Email Address</label>
-                      <input
-                        type="email"
-                        placeholder="john@example.com"
-                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700 ml-1">Subject</label>
-                    <select className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all appearance-none">
-                      <option>General Inquiry</option>
-                      <option>SEO Services</option>
-                      <option>Social Media Marketing</option>
-                      <option>Website Development</option>
-                    </select>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700 ml-1">Your Message</label>
-                    <textarea
-                      rows={5}
-                      placeholder="Tell us about your project..."
-                      className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all resize-none"
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full py-5 bg-[#FFB800] text-[#081120] font-bold rounded-2xl hover:bg-[#ffca28] transition-all shadow-xl shadow-[#FFB800]/20 active:scale-[0.98] flex items-center justify-center gap-3"
-                  >
-                    Send Message <Send className="w-5 h-5" />
-                  </button>
-                </form>
+
+                    {/* Error Banner */}
+                    {status === "error" && (
+                      <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-100 rounded-2xl text-red-600">
+                        <AlertCircle className="w-5 h-5 shrink-0" />
+                        <p className="text-sm font-medium">Something went wrong. Please try again or email us directly at info@medialiftadvisor.com</p>
+                      </div>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={status === "loading"}
+                      className="w-full py-5 bg-[#FFB800] text-[#081120] font-bold rounded-2xl hover:bg-[#ffca28] transition-all shadow-xl shadow-[#FFB800]/20 active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                      {status === "loading" ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" /> Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message <Send className="w-5 h-5" />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                )}
               </motion.div>
             </div>
           </div>
@@ -191,7 +303,10 @@ export default function ContactPage() {
                 <MessageSquare className="w-5 h-5 text-[#B98100]" />
               </div>
               <p className="text-gray-600 font-medium">
-                Still have questions? <Link href="#" className="text-[#B98100] font-bold hover:underline">Chat with us</Link>
+                Still have questions?{" "}
+                <Link href="#" className="text-[#B98100] font-bold hover:underline">
+                  Chat with us
+                </Link>
               </p>
             </div>
           </div>
