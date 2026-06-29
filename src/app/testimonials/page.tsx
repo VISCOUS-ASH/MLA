@@ -8,14 +8,14 @@ const allTestimonials = [
   {
     name: "Founder & CEO",
     role: "TechStart Solutions",
-    content: "Media Lift transformed our brand identity completely. Their creative approach and attention to detail exceeded our expectations. The team was professional and delivered on time.",
+    content: "Media Lift Advisor transformed our brand identity completely. Their creative approach and attention to detail exceeded our expectations. The team was professional and delivered on time.",
     avatar: "https://i.pravatar.cc/150?u=41",
     rating: 5,
   },
   {
     name: "Marketing Director",
     role: "GreenLeaf Organics",
-    content: "Working with Media Lift was a game-changer for our social media presence. Our engagement increased by 300% within just 2 months. Highly recommend their services!",
+    content: "Working with Media Lift Advisor was a game-changer for our social media presence. Our engagement increased by 300% within just 2 months. Highly recommend their services!",
     avatar: "https://i.pravatar.cc/150?u=42",
     rating: 5,
   },
@@ -29,7 +29,7 @@ const allTestimonials = [
   {
     name: "Managing Director",
     role: "Singh Real Estate",
-    content: "Media Lift helped us create impactful billboard campaigns that generated quality leads. Their understanding of visual marketing is exceptional.",
+    content: "Media Lift Advisor helped us create impactful billboard campaigns that generated quality leads. Their understanding of visual marketing is exceptional.",
     avatar: "https://i.pravatar.cc/150?u=44",
     rating: 5,
   },

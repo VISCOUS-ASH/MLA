@@ -7,20 +7,21 @@ import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 
 const team = [
-  {
-    name: "Mahesh Rao",
-    role: "Founder & CEO",
-    image: "/images/FounderMahesh.png",
-    bio: "With over 15 years of experience in digital transformation, Alex leads our vision to redefine how brands interact with their customers in the digital age.",
-    skills: ["Strategic Planning", "Digital Transformation", "Leadership"],
-    socials: { linkedin: "#", twitter: "#" }
-  },
+
   {
     name: "Prashant",
-    role: "Co-Founder",
+    role: "Founder & CEO",
     image: "/images/CofounderPrashant.jpeg",
     bio: "Prashant is a data-driven strategist who has helped hundreds of brands scale their operations through innovative marketing frameworks.",
     skills: ["Market Analysis", "Growth Hacking", "Brand Positioning"],
+    socials: { linkedin: "#", twitter: "#" }
+  },
+    {
+    name: "Mahesh Rao",
+    role: "Co-Founder",
+    image: "/images/FounderMahesh.png",
+    bio: "With over 15 years of experience in digital transformation, Alex leads our vision to redefine how brands interact with their customers in the digital age.",
+    skills: ["Strategic Planning", "Digital Transformation", "Leadership"],
     socials: { linkedin: "#", twitter: "#" }
   },
   // {
@@ -173,7 +174,7 @@ export default function AboutPage() {
             >
               <div className="relative z-10 rounded-[2.5rem] overflow-hidden border-8 border-white/5 shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80" 
+                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop"
                   alt="Team Collaboration" 
                   className="w-full h-full object-cover"
                 />
@@ -228,7 +229,7 @@ export default function AboutPage() {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl relative z-10">
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80"
+                  src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1200&auto=format&fit=crop"
                   alt="Our Team"
                   className="w-full h-full object-cover aspect-[4/3]"
                 />

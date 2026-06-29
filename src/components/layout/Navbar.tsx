@@ -65,6 +65,7 @@ export default function Navbar() {
   >
     MEDIA{" "}
     <span className="text-[#FFB800]">LIFT</span>
+    {" "}ADVISOR
   </span>
 </Link>
 

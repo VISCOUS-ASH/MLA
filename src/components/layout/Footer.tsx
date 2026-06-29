@@ -60,7 +60,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-[#FFB800]" />
-                <span>Hari Om Apartment, Near Hotel KPL Prime, Sohan Nagar Mansarovar, Jaipur 302020</span>
+                <div className="flex flex-col">
+                <span>Branch Office - Behror, 301701</span>
+
+                <span>Head Office - Hari Om Apartment, Near Hotel KPL Prime, Sohan Nagar Mansarovar, Jaipur 302020</span>
+              </div>
               </div>
             </div>
             <div className="flex space-x-4 pt-4">

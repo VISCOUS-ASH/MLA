@@ -9,14 +9,14 @@ export default function StatsSection() {
 
   const highlights = [
     {
-      value: "15+",
+      value: "10+",
       label: "Years of Experience",
       desc: "Decades of combined expertise in business strategy and digital marketing",
     },
     {
-      value: "50+",
+      value: "250+",
       label: "Brands Transformed",
-      desc: "Businesses across industries trust Media Lift for digital growth",
+      desc: "Businesses across industries trust Media Lift Advisor for digital growth",
     },
     {
       value: "300%",

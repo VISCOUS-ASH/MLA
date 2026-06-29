@@ -30,7 +30,7 @@ const servicesData: Record<string, ServiceInfo> = {
       "Financial Planning Support",
       "Performance Tracking",
     ],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop",
   },
   "social-media-management": {
     title: "Social Media Management",
@@ -45,7 +45,7 @@ const servicesData: Record<string, ServiceInfo> = {
       "Influencer Collaboration",
       "Performance Analytics",
     ],
-    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+    image: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?q=80&w=1200&auto=format&fit=crop",
   },
   "content-marketing": {
     title: "Content Marketing",
@@ -60,7 +60,7 @@ const servicesData: Record<string, ServiceInfo> = {
       "Video Scripts & Storyboards",
       "Content Performance Analysis",
     ],
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+    image: "https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=1200&auto=format&fit=crop",
   },
   "branding-designing": {
     title: "Branding & Designing",
@@ -75,7 +75,7 @@ const servicesData: Record<string, ServiceInfo> = {
       "Stationery & Collateral",
       "Brand Messaging & Voice",
     ],
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200&auto=format&fit=crop",
   },
   "graphic-design-video-editing": {
     title: "Graphic Design & Video Editing",
@@ -90,7 +90,7 @@ const servicesData: Record<string, ServiceInfo> = {
       "Presentation Design",
       "Print & Digital Assets",
     ],
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop",
   },
   "web-development": {
     title: "Web Development",
@@ -105,7 +105,7 @@ const servicesData: Record<string, ServiceInfo> = {
       "Performance Optimization",
       "Ongoing Maintenance & Support",
     ],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
   },
 };
 

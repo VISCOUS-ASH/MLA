@@ -5,51 +5,75 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Founder & CEO",
-    role: "TechStart Solutions",
+    name: "Rajesh Kumar",
+    role: "Director, Human Honor",
     content:
-      "Media Lift transformed our brand identity completely. Their creative approach and attention to detail exceeded our expectations. The team was professional and delivered on time.",
-    avatar: "https://i.pravatar.cc/150?u=41",
+      "Media Lift Advisor completely transformed our brand presence. Their strategic approach to digital marketing helped us reach new audiences we never thought possible. Exceptional work!",
+    avatar: "https://ui-avatars.com/api/?name=Rajesh+Kumar&background=FFB800&color=fff",
     rating: 5,
   },
   {
-    name: "Marketing Director",
-    role: "GreenLeaf Organics",
+    name: "Dr. Priya Sharma",
+    role: "Founder, Sankatmochan Therapy Center",
     content:
-      "Working with Media Lift was a game-changer for our social media presence. Our engagement increased by 300% within just 2 months. Highly recommend their services!",
-    avatar: "https://i.pravatar.cc/150?u=42",
+      "The team at Media Lift Advisor understood our healthcare brand perfectly. They created sensitive, impactful campaigns that built trust with our patients. Our appointment bookings increased by 250%.",
+    avatar: "https://ui-avatars.com/api/?name=Priya+Sharma&background=FFB800&color=fff",
     rating: 5,
   },
   {
-    name: "Operations Manager",
-    role: "Verma Enterprises",
+    name: "Anita Verma",
+    role: "CEO, Maurpankh",
     content:
-      "The packaging design they created for our products was outstanding. It helped us stand out on retail shelves and boosted our sales significantly.",
-    avatar: "https://i.pravatar.cc/150?u=43",
+      "From logo refinement to complete brand storytelling, Media Lift Advisor gave Maurpankh a voice that resonates with our audience. Their creative team truly understands Indian aesthetics.",
+    avatar: "https://ui-avatars.com/api/?name=Anita+Verma&background=FFB800&color=fff",
     rating: 5,
   },
   {
-    name: "Managing Director",
-    role: "Singh Real Estate",
+    name: "Vikram Singh",
+    role: "Managing Director, Dreamyug",
     content:
-      "Media Lift helped us create impactful billboard campaigns that generated quality leads. Their understanding of visual marketing is exceptional.",
-    avatar: "https://i.pravatar.cc/150?u=44",
+      "Media Lift Advisor designed our property brochures, hoardings, and digital campaigns. The quality of their visual work helped us sell out our first project phase within 3 months.",
+    avatar: "https://ui-avatars.com/api/?name=Vikram+Singh&background=FFB800&color=fff",
     rating: 5,
   },
   {
-    name: "CEO",
-    role: "Firehawk Solutions",
+    name: "Suresh Bhoomeez",
+    role: "Founder, Bhoomeez Group",
     content:
-      "The branding and corporate identity work Media Lift delivered gave us a professional edge. They understood our vision and brought it to life perfectly.",
-    avatar: "https://i.pravatar.cc/150?u=45",
+      "Working with Media Lift Advisor was the best decision for our real estate brand. They created a cohesive identity across all channels that positioned us as a premium player in the market.",
+    avatar: "https://ui-avatars.com/api/?name=Suresh+Bhoomeez&background=FFB800&color=fff",
     rating: 5,
   },
   {
-    name: "Creative Head",
-    role: "Ajaram Creations",
+    name: "Neha Gupta",
+    role: "Event Director, Bandhan Events",
     content:
-      "From print design to digital campaigns, Media Lift delivers consistent quality. Their creative team is exceptional and always meets deadlines.",
-    avatar: "https://i.pravatar.cc/150?u=46",
+      "As an event company, visual appeal is everything. Media Lift Advisor delivered stunning creatives for our campaigns that consistently wow our clients. They are our go-to creative partner.",
+    avatar: "https://ui-avatars.com/api/?name=Neha+Gupta&background=FFB800&color=fff",
+    rating: 5,
+  },
+  {
+    name: "Arjun Patel",
+    role: "CEO, Prithvi Homes",
+    content:
+      "Media Lift Advisor built our entire digital ecosystem — from website to social media. Their technical expertise combined with creative excellence is rare to find. Highly recommended!",
+    avatar: "https://ui-avatars.com/api/?name=Arjun+Patel&background=FFB800&color=fff",
+    rating: 5,
+  },
+  {
+    name: "Ramesh Laxmi",
+    role: "Owner, Laxmi Namkeen Bhandar",
+    content:
+      "We are a traditional brand, but Media Lift Advisor helped us go digital without losing our roots. Our online orders have grown 4x since they took over our marketing. Truly outstanding!",
+    avatar: "https://ui-avatars.com/api/?name=Ramesh+Laxmi&background=FFB800&color=fff",
+    rating: 5,
+  },
+  {
+    name: "Meera Reddy",
+    role: "Marketing Head, EELCO Natural",
+    content:
+      "Media Lift Advisor's content strategy for our nutrition brand was spot-on. They understand the wellness market deeply and created campaigns that educated and converted our audience.",
+    avatar: "https://ui-avatars.com/api/?name=Meera+Reddy&background=FFB800&color=fff",
     rating: 5,
   },
 ];
@@ -67,14 +91,14 @@ export default function TestimonialsSlider() {
           Don&apos;t just take our word for it
         </h2>
         <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
-          Here&apos;s what our clients have to say about working with us.
+          Trusted by leading brands across India.
         </p>
       </div>
 
       <div className="relative flex overflow-hidden select-none group">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 45, ease: "linear", repeat: Infinity }}
+          transition={{ duration: 50, ease: "linear", repeat: Infinity }}
           className="flex gap-6 px-4"
         >
           {duplicated.map((t, i) => (

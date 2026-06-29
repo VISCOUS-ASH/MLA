@@ -29,8 +29,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-[82px] font-black text-white leading-[1.0] tracking-[-3px] max-w-5xl mx-auto"
         >
-          Stay ahead across all your{" "}
-          <span className="text-[#FFB800]">digital channels</span>
+          Architect success across every{" "}
+          <span className="text-[#FFB800]"> digital layer</span>
         </motion.h1>
 
         <motion.p
