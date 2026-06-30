@@ -7,7 +7,7 @@ import Image from "next/image";
 const founder = {
   name: "Prashant",
   role: "Founder & CEO",
-  image: "/images/CofounderPrashant.jpeg",
+  image: "/images/CofounderPrashant.jpg",
   bio: "With over 15 years of experience in digital transformation, Prashant leads our vision to redefine how brands interact with their customers in the digital age.",
   skills: ["Strategic Planning", "Digital Transformation", "Leadership"],
   socials: { linkedin: "#", twitter: "#" }
