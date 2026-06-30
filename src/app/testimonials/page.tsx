@@ -59,10 +59,10 @@ export default function TestimonialsPage() {
                 <div className="space-y-6">
                   <div className="flex items-center gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-[#FFB800] fill-[#FFB800]" />
+                      <Star key={i} className="w-4 h-4 text-[#C9A227] fill-[#C9A227]" />
                     ))}
                   </div>
-                  <div className="w-12 h-12 bg-[#FFB800] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-[#C9A227] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <Quote className="w-6 h-6 text-[#0B1120] fill-[#0B1120]" />
                   </div>
                   <p className="text-gray-600 italic leading-relaxed text-lg">
@@ -93,15 +93,15 @@ export default function TestimonialsPage() {
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
                 <div>
-                  <p className="text-5xl font-bold font-poppins text-[#FFB800] mb-2">300%</p>
+                  <p className="text-5xl font-bold font-poppins text-[#C9A227] mb-2">300%</p>
                   <p className="text-gray-400 font-medium">Avg. Engagement Increase</p>
                 </div>
                 <div>
-                  <p className="text-5xl font-bold font-poppins text-[#FFB800] mb-2">50+</p>
+                  <p className="text-5xl font-bold font-poppins text-[#C9A227] mb-2">50+</p>
                   <p className="text-gray-400 font-medium">Brands Served</p>
                 </div>
                 <div>
-                  <p className="text-5xl font-bold font-poppins text-[#FFB800] mb-2">98%</p>
+                  <p className="text-5xl font-bold font-poppins text-[#C9A227] mb-2">98%</p>
                   <p className="text-gray-400 font-medium">Client Satisfaction</p>
                 </div>
               </div>

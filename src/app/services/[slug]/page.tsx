@@ -138,7 +138,7 @@ export default function ServiceDetailPage() {
               animate={{ opacity: 1, x: 0 }}
               className="space-y-8"
             >
-              <div className="w-20 h-20 rounded-2xl bg-[#FFB800] flex items-center justify-center shadow-xl shadow-[#FFB800]/20">
+              <div className="w-20 h-20 rounded-2xl bg-[#C9A227] flex items-center justify-center shadow-xl shadow-[#C9A227]/20">
                 <ServiceIcon className="w-10 h-10 text-[#081120]" />
               </div>
               <h2 className="text-4xl font-bold font-poppins text-gray-900 leading-tight">
@@ -161,7 +161,7 @@ export default function ServiceDetailPage() {
               <div className="pt-8">
                 <Link
                   href="/contact"
-                  className="px-10 py-5 bg-[#FFB800] text-[#081120] font-bold rounded-full hover:bg-[#ffca28] transition-all shadow-xl active:scale-95 inline-block"
+                  className="px-10 py-5 bg-[#C9A227] text-[#081120] font-bold rounded-full hover:bg-[#ffca28] transition-all shadow-xl active:scale-95 inline-block"
                 >
                   Request a Custom Strategy
                 </Link>
@@ -180,7 +180,7 @@ export default function ServiceDetailPage() {
                   alt={service.title}
                   className="w-full h-full object-cover aspect-[4/5]"
                 />
-                <div className="absolute inset-0 bg-[#FFB800]/10 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-[#C9A227]/10 mix-blend-multiply" />
               </div>
               
               <motion.div

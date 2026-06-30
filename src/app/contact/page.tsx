@@ -97,7 +97,7 @@ export default function ContactPage() {
 
               <div className="space-y-8">
                 {[
-                  { icon: Mail, label: "Email Us", value: "info@medialiftadvisor.com", color: "bg-[#FFB800]/12 text-[#B98100]" },
+                  { icon: Mail, label: "Email Us", value: "info@medialiftadvisor.com", color: "bg-[#C9A227]/12 text-[#B98100]" },
                   { icon: Phone, label: "Call Us", value: "9610193337", color: "bg-[#081120] text-white" },
                   { icon: MapPin, label: "Visit Us", value: "Hari Om Apartment, Near Hotel KPL Prime, Sohan Nagar Mansarovar, Jaipur 302020 101", color: "bg-gray-100 text-[#081120]" },
                 ].map((item, idx) => (
@@ -125,7 +125,7 @@ export default function ContactPage() {
                 <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Follow Our Journey</p>
                 <div className="flex gap-4">
                   {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-12 h-12 rounded-full bg-gray-100 hover:bg-[#FFB800] hover:text-[#081120] transition-all cursor-pointer flex items-center justify-center text-gray-600">
+                    <div key={i} className="w-12 h-12 rounded-full bg-gray-100 hover:bg-[#C9A227] hover:text-[#081120] transition-all cursor-pointer flex items-center justify-center text-gray-600">
                       <span className="font-bold text-xs">S{i}</span>
                     </div>
                   ))}
@@ -159,7 +159,7 @@ export default function ContactPage() {
                       </p>
                       <button
                         onClick={() => setStatus("idle")}
-                        className="mt-4 px-8 py-3 bg-[#FFB800] text-[#081120] font-bold rounded-2xl hover:bg-[#ffca28] transition-all"
+                        className="mt-4 px-8 py-3 bg-[#C9A227] text-[#081120] font-bold rounded-2xl hover:bg-[#ffca28] transition-all"
                       >
                         Send Another Message
                       </button>
@@ -180,7 +180,7 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="John Doe"
-                          className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all"
+                          className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/25 focus:border-[#C9A227] transition-all"
                         />
                       </div>
                       <div className="space-y-2">
@@ -192,7 +192,7 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="john@example.com"
-                          className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all"
+                          className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/25 focus:border-[#C9A227] transition-all"
                         />
                       </div>
                     </div>
@@ -203,7 +203,7 @@ export default function ContactPage() {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all appearance-none"
+                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/25 focus:border-[#C9A227] transition-all appearance-none"
                       >
                         <option>General Inquiry</option>
                         <option>SEO Services</option>
@@ -221,7 +221,7 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Tell us about your project..."
-                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/25 focus:border-[#FFB800] transition-all resize-none"
+                        className="w-full px-6 py-4 rounded-2xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C9A227]/25 focus:border-[#C9A227] transition-all resize-none"
                       />
                     </div>
 
@@ -236,7 +236,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className="w-full py-5 bg-[#FFB800] text-[#081120] font-bold rounded-2xl hover:bg-[#ffca28] transition-all shadow-xl shadow-[#FFB800]/20 active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full py-5 bg-[#C9A227] text-[#081120] font-bold rounded-2xl hover:bg-[#ffca28] transition-all shadow-xl shadow-[#C9A227]/20 active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       {status === "loading" ? (
                         <>
@@ -299,7 +299,7 @@ export default function ContactPage() {
 
           <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-4 p-6 bg-white rounded-full shadow-sm border border-gray-100">
-              <div className="w-10 h-10 rounded-full bg-[#FFB800]/12 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-[#C9A227]/12 flex items-center justify-center">
                 <MessageSquare className="w-5 h-5 text-[#B98100]" />
               </div>
               <p className="text-gray-600 font-medium">

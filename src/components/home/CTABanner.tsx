@@ -23,7 +23,7 @@ export default function CTABanner() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center font-semibold rounded-full border-2 border-[#FFB800] text-[#FFB800] hover:bg-[#FFB800] hover:text-[#0B1120] px-8 py-4 text-lg transition-all duration-300"
+            className="inline-flex items-center justify-center font-semibold rounded-full border-2 border-[#C9A227] text-[#C9A227] hover:bg-[#C9A227] hover:text-[#0B1120] px-8 py-4 text-lg transition-all duration-300"
           >
             Contact Us
             <ArrowRight className="w-5 h-5 ml-2" />

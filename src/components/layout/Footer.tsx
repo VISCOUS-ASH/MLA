@@ -1,6 +1,12 @@
+'use client'
 import Link from "next/link";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa6";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+
+
 
 const footerLinks = [
   {
@@ -33,7 +39,19 @@ const footerLinks = [
   },
 ];
 
+  // const [isOpen, setIsOpen] = useState(false);
+ 
+
 export default function Footer() {
+   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <footer className="bg-[#081120] text-gray-300 pt-20 pb-10 relative overflow-hidden">
       <div className="absolute inset-0 soft-grid opacity-10" />
@@ -41,25 +59,39 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand and Contact */}
           <div className="lg:col-span-2 space-y-6">
-            <Link href="/" className="inline-block">
-              <span className="text-2xl font-bold font-poppins tracking-tight text-white">
-                MEDIA <span className="text-[#FFB800]">LIFT</span>
-              </span>
-            </Link>
+                  <Link href="/" className="flex items-center space-x-2">
+  <Image
+    src="/images/logos/logo1.png"
+    alt="MediaLift Logo"
+    width={60}
+    height={60}
+    className="object-contain rounded-full"
+  />
+  <span
+    className={cn(
+      "text-[28px] font-extrabold tracking-[-1px] transition-colors duration-300",
+      "text-white"
+    )}
+  >
+    MEDIA{" "}
+    <span className="text-[#C9A227]">LIFT</span>
+    {" "}ADVISOR
+  </span>
+</Link>
             <p className="text-gray-400 max-w-sm">
               Empowering brands through innovative digital strategies and data-driven marketing solutions. Your growth is our priority.
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-[#FFB800]" />
+                <Mail className="w-5 h-5 text-[#C9A227]" />
                 <span>info@medialiftadvisor.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-[#FFB800]" />
+                <Phone className="w-5 h-5 text-[#C9A227]" />
                 <span>9610193337</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-[#FFB800]" />
+                <MapPin className="w-5 h-5 text-[#C9A227]" />
                 <div className="flex flex-col">
                 <span>Branch Office - Behror, 301701</span>
 
@@ -68,16 +100,16 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex space-x-4 pt-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#FFB800] hover:text-[#081120] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#C9A227] hover:text-[#081120] transition-colors">
                 <FaFacebookF className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#FFB800] hover:text-[#081120] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#C9A227] hover:text-[#081120] transition-colors">
                 <FaTwitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#FFB800] hover:text-[#081120] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#C9A227] hover:text-[#081120] transition-colors">
                 <FaInstagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#FFB800] hover:text-[#081120] transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-[#C9A227] hover:text-[#081120] transition-colors">
                 <FaLinkedinIn className="w-5 h-5" />
               </a>
             </div>
@@ -90,7 +122,7 @@ export default function Footer() {
               <ul className="space-y-4">
                 {section.links.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="group inline-flex items-center gap-1 hover:text-[#FFB800] transition-colors">
+                    <Link href={link.href} className="group inline-flex items-center gap-1 hover:text-[#C9A227] transition-colors">
                       {link.name}
                       <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
                     </Link>

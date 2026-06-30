@@ -25,7 +25,7 @@ html {
 }
 
 ::selection {
-  background: #ffb800;
+  background: #C9A227;
   color: #081120;
 }
 
@@ -34,7 +34,7 @@ a,
 input,
 textarea,
 select {
-  outline-color: #ffb800;
+  outline-color: #C9A227;
 }
 
 .page-surface {
@@ -63,7 +63,7 @@ select {
 }
 
 .gold-button {
-  background: #ffb800;
+  background: #C9A227;
   color: #081120;
   box-shadow: 0 14px 36px rgba(255, 184, 0, 0.28);
   transition:

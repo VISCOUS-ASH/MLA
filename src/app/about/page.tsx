@@ -48,7 +48,7 @@ const values = [
     description: "To empower brands with innovative digital strategies that drive sustainable growth and excellence.",
     icon: Target,
     color: "text-[#B98100]",
-    bg: "bg-[#FFB800]/12",
+    bg: "bg-[#C9A227]/12",
   },
   {
     title: "Our Vision",
@@ -101,7 +101,7 @@ export default function AboutPage() {
             rotate: [0, 90, 0],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FFB800]/12 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" 
+          className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C9A227]/12 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" 
         />
         <motion.div 
           animate={{ 
@@ -125,7 +125,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-block px-4 py-1.5 rounded-full bg-[#FFB800]/10 border border-[#FFB800]/25 text-[#FFB800] text-sm font-semibold tracking-wide uppercase mb-6"
+                className="inline-block px-4 py-1.5 rounded-full bg-[#C9A227]/10 border border-[#C9A227]/25 text-[#C9A227] text-sm font-semibold tracking-wide uppercase mb-6"
               >
                 Our Journey & Legacy
               </motion.span>
@@ -136,7 +136,7 @@ export default function AboutPage() {
                 className="text-5xl md:text-6xl lg:text-7xl font-bold font-poppins text-white leading-tight mb-8"
               >
                 Crafting Digital <br />
-                <span className="bg-gradient-to-r from-[#FFB800] to-[#F97316] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#C9A227] to-[#F97316] bg-clip-text text-transparent">
                   Success Stories
                 </span>
               </motion.h1>
@@ -160,7 +160,7 @@ export default function AboutPage() {
                   <span className="text-gray-300 text-sm font-medium">100+ Projects Completed</span>
                 </div>
                 <div className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                  <div className="w-2 h-2 rounded-full bg-[#FFB800] animate-pulse" />
+                  <div className="w-2 h-2 rounded-full bg-[#C9A227] animate-pulse" />
                   <span className="text-gray-300 text-sm font-medium">98% Client Satisfaction</span>
                 </div>
               </motion.div>
@@ -186,7 +186,7 @@ export default function AboutPage() {
                 className="absolute -top-6 -right-6 z-20 bg-white p-6 rounded-3xl shadow-2xl"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#FFB800] flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl bg-[#C9A227] flex items-center justify-center">
                     <Rocket className="w-6 h-6 text-[#081120]" />
                   </div>
                   <div>
@@ -238,13 +238,13 @@ export default function AboutPage() {
               <motion.div 
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-10 -right-10 bg-[#FFB800] text-[#081120] p-8 rounded-2xl shadow-xl hidden md:block z-20"
+                className="absolute -bottom-10 -right-10 bg-[#C9A227] text-[#081120] p-8 rounded-2xl shadow-xl hidden md:block z-20"
               >
                 <p className="text-4xl font-bold font-poppins mb-1">12+</p>
                 <p className="text-sm font-medium opacity-80 uppercase tracking-wider">Years of Excellence</p>
               </motion.div>
 
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#FFB800]/12 rounded-full blur-3xl -z-10" />
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#C9A227]/12 rounded-full blur-3xl -z-10" />
             </motion.div>
 
             <motion.div 
@@ -277,7 +277,7 @@ export default function AboutPage() {
                   <span className="font-semibold text-gray-900">Fast Growth</span>
                 </div>
                 <div className="flex items-center gap-3 group">
-                  <div className="w-10 h-10 rounded-full bg-[#FFB800]/12 flex items-center justify-center group-hover:bg-[#FFB800]/20 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-[#C9A227]/12 flex items-center justify-center group-hover:bg-[#C9A227]/20 transition-colors">
                     <Heart className="w-5 h-5 text-[#B98100]" />
                   </div>
                   <span className="font-semibold text-gray-900">Expert Team</span>
@@ -355,10 +355,10 @@ export default function AboutPage() {
                 
                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <h4 className="text-xl font-bold text-white font-poppins">{member.name}</h4>
-                  <p className="text-[#FFB800] font-medium">{member.role}</p>
+                  <p className="text-[#C9A227] font-medium">{member.role}</p>
                 </div>
 
-                <div className="absolute inset-0 border-2 border-[#FFB800]/50 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none scale-95 group-hover:scale-100 transition-transform duration-300" />
+                <div className="absolute inset-0 border-2 border-[#C9A227]/50 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none scale-95 group-hover:scale-100 transition-transform duration-300" />
               </motion.div>
             ))}
           </motion.div>
@@ -399,7 +399,7 @@ export default function AboutPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:hidden" />
                   <div className="absolute bottom-6 left-6 text-white md:hidden">
                     <h2 className="text-3xl font-bold font-poppins">{selectedMember.name}</h2>
-                    <p className="text-[#FFB800] font-medium">{selectedMember.role}</p>
+                    <p className="text-[#C9A227] font-medium">{selectedMember.role}</p>
                   </div>
                 </div>
 
@@ -423,7 +423,7 @@ export default function AboutPage() {
                         {selectedMember.skills.map((skill) => (
                           <span 
                             key={skill}
-                            className="px-4 py-2 rounded-full bg-[#FFB800]/12 text-[#B98100] text-sm font-bold"
+                            className="px-4 py-2 rounded-full bg-[#C9A227]/12 text-[#B98100] text-sm font-bold"
                           >
                             {skill}
                           </span>
@@ -436,7 +436,7 @@ export default function AboutPage() {
                       <div className="flex gap-4">
                         <a
   href={selectedMember.socials.linkedin}
-  className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-[#FFB800] hover:text-[#081120] transition-all"
+  className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-[#C9A227] hover:text-[#081120] transition-all"
 >
   <FaLinkedin className="w-5 h-5 text-black" />
 </a>

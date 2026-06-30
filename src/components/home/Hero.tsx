@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#0a0f1e] pt-32 pb-0">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:48px_48px]" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#FFB800]/8 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#C9A227]/8 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-blue-700/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-indigo-700/10 rounded-full blur-[100px] pointer-events-none" />
 
@@ -17,9 +17,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#FFB800]/25 bg-[#FFB800]/8 text-sm font-semibold text-[#FFB800] mb-8"
+          className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#C9A227]/25 bg-[#C9A227]/8 text-sm font-semibold text-[#C9A227] mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-[#FFB800] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#C9A227] animate-pulse" />
           Results-Driven Digital Marketing Agency
         </motion.div>
 
@@ -30,7 +30,7 @@ export default function Hero() {
           className="text-5xl sm:text-6xl md:text-7xl lg:text-[82px] font-black text-white leading-[1.0] tracking-[-3px] max-w-5xl mx-auto"
         >
           Architect success across every{" "}
-          <span className="text-[#FFB800]"> digital layer</span>
+          <span className="text-[#C9A227]"> digital layer</span>
         </motion.h1>
 
         <motion.p
@@ -50,7 +50,7 @@ export default function Hero() {
         >
           <Link
             href="/contact"
-            className="px-8 py-4 bg-[#FFB800] text-[#0a0f1e] font-bold rounded-full hover:bg-[#ffca28] transition-all shadow-[0_0_40px_rgba(255,184,0,0.25)] flex items-center gap-2 group active:scale-95 text-base"
+            className="px-8 py-4 bg-[#C9A227] text-[#0a0f1e] font-bold rounded-full hover:bg-[#ffca28] transition-all shadow-[0_0_40px_rgba(255,184,0,0.25)] flex items-center gap-2 group active:scale-95 text-base"
           >
             Get free consultation
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -76,7 +76,7 @@ export default function Hero() {
             "ROI guaranteed",
           ].map((item, i) => (
             <span key={i} className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#FFB800]" />
+              <CheckCircle2 className="w-4 h-4 text-[#C9A227]" />
               {item}
             </span>
           ))}
@@ -94,14 +94,14 @@ export default function Hero() {
             className="absolute -top-5 left-4 md:left-12 bg-white rounded-2xl shadow-2xl p-4 w-44 z-20 text-left hidden sm:block"
           >
             <div className="flex items-center gap-2 mb-2">
-              <div className="w-7 h-7 rounded-lg bg-[#FFB800]/15 flex items-center justify-center">
-                <TrendingUp className="w-4 h-4 text-[#FFB800]" />
+              <div className="w-7 h-7 rounded-lg bg-[#C9A227]/15 flex items-center justify-center">
+                <TrendingUp className="w-4 h-4 text-[#C9A227]" />
               </div>
               <p className="text-xs font-semibold text-gray-500">Monthly Growth</p>
             </div>
             <p className="text-2xl font-black text-gray-900">+125%</p>
             <div className="mt-2 h-1.5 bg-gray-100 rounded-full overflow-hidden">
-              <div className="h-full bg-[#FFB800] rounded-full w-4/5" />
+              <div className="h-full bg-[#C9A227] rounded-full w-4/5" />
             </div>
           </motion.div>
 
@@ -118,7 +118,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-[#FFB800] text-[#FFB800]" />
+                <Star key={i} className="w-3.5 h-3.5 fill-[#C9A227] text-[#C9A227]" />
               ))}
             </div>
             <p className="text-xs text-gray-400 mt-1">4.9/5 from 1,200+ clients</p>

@@ -64,7 +64,7 @@ export default function Navbar() {
     )}
   >
     MEDIA{" "}
-    <span className="text-[#FFB800]">LIFT</span>
+    <span className="text-[#C9A227]">LIFT</span>
     {" "}ADVISOR
   </span>
 </Link>
@@ -104,7 +104,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="px-6 py-3 bg-[#FFB800] text-[#111827] text-sm font-bold rounded-full hover:bg-[#ffca28] transition-all duration-300 shadow-[0_4px_20px_rgba(255,184,0,0.35)] hover:scale-[1.03] active:scale-95"
+            className="px-6 py-3 bg-[#C9A227] text-[#111827] text-sm font-bold rounded-full hover:bg-[#ffca28] transition-all duration-300 shadow-[0_4px_20px_rgba(255,184,0,0.35)] hover:scale-[1.03] active:scale-95"
           >
             Get Started
           </Link>
@@ -159,7 +159,7 @@ export default function Navbar() {
               ))}
               <Link
                 href="/contact"
-                className="w-full py-3 bg-[#FFB800] text-[#111827] text-center font-bold rounded-full hover:bg-[#ffca28] transition-all"
+                className="w-full py-3 bg-[#C9A227] text-[#111827] text-center font-bold rounded-full hover:bg-[#ffca28] transition-all"
                 onClick={() => setIsOpen(false)}
               >
                 Get Started

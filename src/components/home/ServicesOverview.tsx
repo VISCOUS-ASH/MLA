@@ -107,8 +107,8 @@ export default function ServicesSection() {
                 className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300"
               >
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-[#FFB800]/10 flex items-center justify-center mb-6 group-hover:bg-[#FFB800]/20 transition-colors duration-300">
-                  <Icon className="w-7 h-7 text-[#FFB800]" strokeWidth={1.5} />
+                <div className="w-14 h-14 rounded-xl bg-[#C9A227]/10 flex items-center justify-center mb-6 group-hover:bg-[#C9A227]/20 transition-colors duration-300">
+                  <Icon className="w-7 h-7 text-[#C9A227]" strokeWidth={1.5} />
                 </div>
 
                 {/* Title */}
@@ -124,7 +124,7 @@ export default function ServicesSection() {
                 {/* CTA Link */}
                 <a
                   href={service.link}
-                  className="inline-flex items-center gap-2 text-[#FFB800] font-semibold text-sm group/link hover:gap-3 transition-all duration-300"
+                  className="inline-flex items-center gap-2 text-[#C9A227] font-semibold text-sm group/link hover:gap-3 transition-all duration-300"
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" />

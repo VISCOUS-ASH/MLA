@@ -31,9 +31,9 @@ export default function SectionHeader({
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-flex items-center gap-2 rounded-full bg-[#FFB800]/12 px-4 py-2 text-[#B98100] font-bold tracking-wider uppercase text-xs"
+          className="inline-flex items-center gap-2 rounded-full bg-[#C9A227]/12 px-4 py-2 text-[#B98100] font-bold tracking-wider uppercase text-xs"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-[#FFB800]" />
+          <span className="h-1.5 w-1.5 rounded-full bg-[#C9A227]" />
           {subtitle}
         </motion.span>
       )}

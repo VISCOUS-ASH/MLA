@@ -84,7 +84,7 @@ export default function TestimonialsSlider() {
   return (
     <section className="py-24 bg-[#f5f5f7] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-14 text-center">
-        <span className="inline-block text-[#FFB800] font-bold tracking-wider uppercase text-sm mb-3">
+        <span className="inline-block text-[#C9A227] font-bold tracking-wider uppercase text-sm mb-3">
           What Our Clients Say
         </span>
         <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">
@@ -108,12 +108,12 @@ export default function TestimonialsSlider() {
             >
               <div className="flex gap-1">
                 {[...Array(t.rating)].map((_, j) => (
-                  <Star key={j} className="w-4 h-4 fill-[#FFB800] text-[#FFB800]" />
+                  <Star key={j} className="w-4 h-4 fill-[#C9A227] text-[#C9A227]" />
                 ))}
               </div>
 
-              <div className="w-9 h-9 rounded-full bg-[#FFB800]/10 flex items-center justify-center">
-                <Quote className="w-4 h-4 text-[#FFB800]" />
+              <div className="w-9 h-9 rounded-full bg-[#C9A227]/10 flex items-center justify-center">
+                <Quote className="w-4 h-4 text-[#C9A227]" />
               </div>
 
               <p className="text-gray-600 text-sm leading-relaxed flex-1">
@@ -124,11 +124,11 @@ export default function TestimonialsSlider() {
                 <img
                   src={t.avatar}
                   alt={t.name}
-                  className="w-10 h-10 rounded-full object-cover border-2 border-[#FFB800]/30"
+                  className="w-10 h-10 rounded-full object-cover border-2 border-[#C9A227]/30"
                 />
                 <div>
                   <p className="text-sm font-bold text-gray-900">{t.name}</p>
-                  <p className="text-xs text-[#FFB800] font-medium">{t.role}</p>
+                  <p className="text-xs text-[#C9A227] font-medium">{t.role}</p>
                 </div>
               </div>
             </div>

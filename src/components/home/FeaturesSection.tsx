@@ -55,7 +55,7 @@ export default function FeaturesSection() {
               </div>
               <div className="p-8 bg-white">
                 {card.tag && (
-                  <span className="inline-block text-[#FFB800] font-bold tracking-wider uppercase text-xs mb-3">
+                  <span className="inline-block text-[#C9A227] font-bold tracking-wider uppercase text-xs mb-3">
                     {card.tag}
                   </span>
                 )}
@@ -67,7 +67,7 @@ export default function FeaturesSection() {
                 </p>
                 <Link
                   href={card.link}
-                  className="inline-flex items-center gap-2 text-sm font-bold text-gray-700 hover:text-[#FFB800] transition-colors group/btn"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-gray-700 hover:text-[#C9A227] transition-colors group/btn"
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

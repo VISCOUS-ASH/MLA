@@ -69,7 +69,7 @@ export default function CareersPage() {
                     transition={{ delay: idx * 0.1 }}
                     className="space-y-3"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#FFB800]/12 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-xl bg-[#C9A227]/12 flex items-center justify-center">
                       <perk.icon className="w-6 h-6 text-[#B98100]" />
                     </div>
                     <h4 className="font-bold text-gray-900 font-poppins">{perk.title}</h4>
@@ -121,7 +121,7 @@ export default function CareersPage() {
                 className="bg-white p-8 rounded-3xl border border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-6 interactive-card group"
               >
                 <div className="space-y-4">
-                  <span className="px-4 py-1.5 bg-[#FFB800]/12 text-[#B98100] text-xs font-bold rounded-full uppercase tracking-wider">
+                  <span className="px-4 py-1.5 bg-[#C9A227]/12 text-[#B98100] text-xs font-bold rounded-full uppercase tracking-wider">
                     {job.category}
                   </span>
                   <h3 className="text-2xl font-bold text-gray-900 font-poppins group-hover:text-[#B98100] transition-colors">
@@ -129,11 +129,11 @@ export default function CareersPage() {
                   </h3>
                   <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 font-medium">
                     <div className="flex items-center gap-2">
-                      <Briefcase className="w-4 h-4 text-[#FFB800]" />
+                      <Briefcase className="w-4 h-4 text-[#C9A227]" />
                       {job.type}
                     </div>
                     <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-[#FFB800]" />
+                      <MapPin className="w-4 h-4 text-[#C9A227]" />
                       {job.location}
                     </div>
                   </div>
@@ -141,7 +141,7 @@ export default function CareersPage() {
                 <div>
                   <Link
                     href="#"
-                    className="inline-flex items-center gap-2 px-8 py-4 dark-button font-bold rounded-full group-hover:bg-[#FFB800] group-hover:text-[#081120]"
+                    className="inline-flex items-center gap-2 px-8 py-4 dark-button font-bold rounded-full group-hover:bg-[#C9A227] group-hover:text-[#081120]"
                   >
                     Apply Now <ArrowRight className="w-4 h-4" />
                   </Link>

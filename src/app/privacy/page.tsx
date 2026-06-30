@@ -80,7 +80,7 @@ export default function PrivacyPage() {
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 font-poppins">7. Contact Us</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  If you have any questions about this Privacy Policy, please contact us at <a href="mailto:info@medialiftadvisor.com" className="text-[#FFB800] hover:underline">info@medialiftadvisor.com</a>.
+                  If you have any questions about this Privacy Policy, please contact us at <a href="mailto:info@medialiftadvisor.com" className="text-[#C9A227] hover:underline">info@medialiftadvisor.com</a>.
                 </p>
               </div>
 

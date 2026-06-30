@@ -90,7 +90,7 @@ export default function BlogPage() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-4 py-1.5 bg-[#FFB800] text-[#081120] text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">
+                    <span className="px-4 py-1.5 bg-[#C9A227] text-[#081120] text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">
                       {post.category}
                     </span>
                   </div>
@@ -99,11 +99,11 @@ export default function BlogPage() {
                 <div className="p-8 flex flex-col flex-grow">
                   <div className="flex items-center gap-6 mb-4 text-xs font-medium text-gray-500 uppercase tracking-widest">
                     <div className="flex items-center gap-2">
-                      <Calendar className="w-3.5 h-3.5 text-[#FFB800]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#C9A227]" />
                       {post.date}
                     </div>
                     <div className="flex items-center gap-2">
-                      <User className="w-3.5 h-3.5 text-[#FFB800]" />
+                      <User className="w-3.5 h-3.5 text-[#C9A227]" />
                       {post.author}
                     </div>
                   </div>
@@ -135,8 +135,8 @@ export default function BlogPage() {
           <div className="mt-24 bg-[#081120] rounded-[3rem] p-12 md:p-20 relative overflow-hidden text-center text-white">
             <div className="absolute inset-0 soft-grid opacity-15" />
             <div className="relative z-10 max-w-2xl mx-auto space-y-8">
-              <div className="w-16 h-16 bg-[#FFB800]/12 border border-[#FFB800]/25 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-md">
-                <Tag className="w-8 h-8 text-[#FFB800]" />
+              <div className="w-16 h-16 bg-[#C9A227]/12 border border-[#C9A227]/25 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-md">
+                <Tag className="w-8 h-8 text-[#C9A227]" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold font-poppins">Subscribe for Digital Mastery</h2>
               <p className="text-white/70 leading-relaxed text-lg">

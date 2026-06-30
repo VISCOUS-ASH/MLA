@@ -162,11 +162,11 @@ export default function PortfolioSection() {
                 {/* Overlay */}
                 <div className="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-[#0F3D3E]/90 via-[#0F3D3E]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[#FFB800] text-[#0F3D3E] text-xs font-bold uppercase tracking-wider mb-2">
+                    <span className="inline-block px-3 py-1 rounded-full bg-[#C9A227] text-[#0F3D3E] text-xs font-bold uppercase tracking-wider mb-2">
                       {project.category}
                     </span>
                     <h3 className="text-lg font-bold text-white mb-1">{project.title}</h3>
-                    <p className="text-[#FFB800] text-sm font-semibold">{project.result}</p>
+                    <p className="text-[#C9A227] text-sm font-semibold">{project.result}</p>
                   </div>
                 </div>
 
@@ -189,7 +189,7 @@ export default function PortfolioSection() {
         >
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#FFB800] text-[#0F3D3E] font-bold rounded-full hover:bg-[#e6a600] transition-all shadow-lg active:scale-95 group"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#C9A227] text-[#0F3D3E] font-bold rounded-full hover:bg-[#e6a600] transition-all shadow-lg active:scale-95 group"
           >
             View All Projects
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

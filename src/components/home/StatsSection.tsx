@@ -62,7 +62,7 @@ export default function StatsSection() {
                 <p className="text-4xl lg:text-5xl font-black text-gray-900 tracking-tight">
                   {stat.value}
                 </p>
-                <div className="w-10 h-0.5 bg-[#FFB800] my-3 mx-auto" />
+                <div className="w-10 h-0.5 bg-[#C9A227] my-3 mx-auto" />
                 <p className="text-sm font-bold text-gray-900 mb-1">{stat.label}</p>
                 <p className="text-xs text-gray-500 leading-relaxed">{stat.desc}</p>
               </motion.div>

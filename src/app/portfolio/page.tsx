@@ -107,7 +107,7 @@ export default function PortfolioPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-8 py-3 rounded-full font-bold transition-all duration-300 ${
                   activeCategory === cat
-                    ? "bg-[#FFB800] text-[#0B1120] shadow-lg"
+                    ? "bg-[#C9A227] text-[#0B1120] shadow-lg"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -139,12 +139,12 @@ export default function PortfolioPage() {
                   
                   <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent">
                     <motion.div className="space-y-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <span className="inline-block px-3 py-1 rounded-full bg-[#FFB800] text-[#0B1120] text-xs font-bold uppercase tracking-widest">
+                      <span className="inline-block px-3 py-1 rounded-full bg-[#C9A227] text-[#0B1120] text-xs font-bold uppercase tracking-widest">
                         {project.category}
                       </span>
                       <h3 className="text-xl font-bold text-white font-poppins">{project.title}</h3>
                       <div className="flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                        <p className="text-[#FFB800] text-sm font-bold">{project.result}</p>
+                        <p className="text-[#C9A227] text-sm font-bold">{project.result}</p>
                         <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-900 transform rotate-45 group-hover:rotate-0 transition-transform duration-500">
                           <ExternalLink className="w-5 h-5" />
                         </div>
@@ -165,7 +165,7 @@ export default function PortfolioPage() {
             </p>
             <Link
               href="/contact"
-              className="px-10 py-5 bg-[#FFB800] text-[#0B1120] font-bold rounded-full hover:bg-[#ffca28] transition-all shadow-xl active:scale-95 inline-flex items-center gap-3 group"
+              className="px-10 py-5 bg-[#C9A227] text-[#0B1120] font-bold rounded-full hover:bg-[#ffca28] transition-all shadow-xl active:scale-95 inline-flex items-center gap-3 group"
             >
               Start Your Project <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>

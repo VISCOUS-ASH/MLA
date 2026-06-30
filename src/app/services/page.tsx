@@ -58,12 +58,12 @@ const services = [
 ];
 
 const colorVariants: Record<string, string> = {
-  blue: "from-[#FFB800] to-[#B98100]",
+  blue: "from-[#C9A227] to-[#B98100]",
   indigo: "from-[#0B1120] to-[#1a2540]",
-  purple: "from-[#FFB800] to-[#F97316]",
-  pink: "from-[#FFB800] to-[#E8970A]",
+  purple: "from-[#C9A227] to-[#F97316]",
+  pink: "from-[#C9A227] to-[#E8970A]",
   orange: "from-[#0B1120] to-[#1a2540]",
-  cyan: "from-[#FFB800] to-[#B98100]",
+  cyan: "from-[#C9A227] to-[#B98100]",
 };
 
 export default function ServicesPage() {
@@ -99,14 +99,14 @@ export default function ServicesPage() {
                 <ul className="space-y-3 mb-10 grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-sm text-gray-500">
-                      <CheckCircle2 className="w-4 h-4 text-[#FFB800]" />
+                      <CheckCircle2 className="w-4 h-4 text-[#C9A227]" />
                       {feature}
                     </li>
                   ))}
                 </ul>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-50 rounded-xl group-hover:bg-[#FFB800] group-hover:text-[#0B1120] transition-colors duration-300 font-bold"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-50 rounded-xl group-hover:bg-[#C9A227] group-hover:text-[#0B1120] transition-colors duration-300 font-bold"
                 >
                   Learn More
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

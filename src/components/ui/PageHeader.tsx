@@ -18,7 +18,7 @@ export default function PageHeader({ title, subtitle, description }: PageHeaderP
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
-        className="absolute left-1/2 top-24 h-px w-[min(860px,82vw)] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#FFB800]/70 to-transparent"
+        className="absolute left-1/2 top-24 h-px w-[min(860px,82vw)] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#C9A227]/70 to-transparent"
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
@@ -29,8 +29,8 @@ export default function PageHeader({ title, subtitle, description }: PageHeaderP
           className="mx-auto max-w-4xl"
         >
           {subtitle && (
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#FFB800]/25 bg-[#FFB800]/10 px-4 py-2 text-[#FFB800] font-bold tracking-wider uppercase text-xs mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FFB800]" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#C9A227]/25 bg-[#C9A227]/10 px-4 py-2 text-[#C9A227] font-bold tracking-wider uppercase text-xs mb-6">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#C9A227]" />
               {subtitle}
             </span>
           )}
